@@ -1,0 +1,10 @@
+.background {
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.background-image {
+    width: 100vw;
+    height: 100vh;
+}
