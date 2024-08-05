@@ -25,25 +25,41 @@
   background-color: rgab(0, 0, 0, 0);
 }
 
+.background {
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
 .background-image {
-  background-color: #282c34;
+  width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: absolute;
 }
 
 .door-image {
   width: 326px;
   height: 589px;
   top: 367px;
-  /* left: 206px;
+  left: 206px;
+  position: absolute;
+}
+
+.door2-image {
+  width: 752px;
+  height: 685px;
+  top: 318px;
+  left: 584px;
+  position: absolute;
+}
+
+.btn {
+  width: 252px;
+  height: 72px;
+  top: 626px;
+  left: 834px;
   gap: 0px;
-  opacity: 0px; */
-  z-index: 3;
-  position: relative;
+  opacity: 0px;
+  position: absolute;
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -1,6 +1,6 @@
 import './App.css';
-import Home from './component/Home';
-import Landing from './component/Landing';
+import Home from './Pages/Home';
+import Landing from './Pages/Landing';
 
 function App() {
   return (
