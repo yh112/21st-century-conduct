@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import backgroundImg from "../assets/배경1_분리.png";
 import doorImg from "../assets/문1_닫힘.png";
 import openDoorImg from "../assets/문1_열림.png";
@@ -27,19 +28,21 @@ const Landing = () => {
   return (
     <div className="background">
       <img className="background-image" src={backgroundImg} />
-      <div 
-        className="door-container" 
-        onMouseOver={onDoorContainerMouseOver} 
+      <div
+        className="door2-container"
+        onMouseOver={onDoorContainerMouseOver}
         onMouseOut={onDoorContainerMouseOut}
       >
         <img className="door2-image" src={doorSrc} />
         {!doorState && (
-          <img 
-            className="btn" 
-            onMouseOver={() => setBtnSrc(hoverBtn)} 
-            onMouseOut={() => setBtnSrc(btn)} 
-            src={btnSrc} 
-          />
+          <NavLink to="/home">
+            <img
+              className="btn"
+              onMouseOver={() => setBtnSrc(hoverBtn)}
+              onMouseOut={() => setBtnSrc(btn)}
+              src={btnSrc}
+            />
+          </NavLink>
         )}
       </div>
     </div>

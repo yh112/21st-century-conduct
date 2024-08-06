@@ -36,12 +36,28 @@
   height: 100vh;
 }
 
+.door-container {
+  gap: 60px;
+  display: flex;
+  flex-direction: row;
+  top: 367px;
+  left: 206px;
+  width: fit-content;
+  height: 589px;
+  position: absolute;
+}
+
+.door2-container {
+  width: 752px;
+  height: 685px;
+  top: 318px;
+  left: 584px;
+}
+
 .door-image {
   width: 326px;
   height: 589px;
-  top: 367px;
-  left: 206px;
-  position: absolute;
+  position: relative;
 }
 
 .door2-image {
@@ -62,33 +78,191 @@
   position: absolute;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.door-btn-container {
   display: flex;
   flex-direction: column;
+}
+
+.homeBtn {
+  width: 200px;
+  height: 62px;
+  top: -310px;
+  left: 63px;
+  position: relative;
+}
+
+.navigation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Chosun';
+}
+
+.navigation-container {
+  writing-mode: vertical-rl;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.navigation-content {
+  z-index: 6;
+  display: flex;
+  width: 80px;
+  height: 216px;
+  border-left: 5px solid black;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: center;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 1);
+
+  border-bottom: 1px solid black;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 1);
+    color: rgba(111, 229, 255, 1);
+
+  }
 }
 
-.App-link {
-  color: #61dafb;
+.navigation-content.hover {
+  background-color: rgba(0, 0, 0, 1);
+  color: rgba(111, 229, 255, 1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.overview-container {
+  width: fit-content;
+  height: 896px;
+  top: 132px;
+  left: 51px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  border-top: 6px solid black;
+  font-family: 'Chosun';
+  box-sizing: border-box;
+}
+
+.overview-content {
+  width: 436px;
+  height: 896px;
+  border: 2px solid black;
+  border-top: 0px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.overview-title {
+  background: rgba(0, 205, 218, 1);
+  color: black;
+  width: 436px;
+  height: 60px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+
+.overview-class {
+  display: flex;
+  flex-direction: row;
+}
+
+.class-content {
+  writing-mode: vertical-lr;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  /* border: 2px solid black; */
+  border-bottom: 2px solid black;
+  width: 100%;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 1);
+    color: #fff;
   }
 
-  to {
-    transform: rotate(360deg);
+  z-index: 10;
+}
+
+.class-content:not(:last-child) {
+  border-right: 2px solid black;
+  /* 첫 번째 항목을 제외한 상단 테두리 추가 */
+}
+
+.overview-text-container {
+  max-height: 610px;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  overflow-y: scroll !important;
+  z-index: 10;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
   }
+
+  &::-webkit-scrollbar-thumb {
+    outline: none;
+    border-radius: 10px;
+    border: 8px solid rgba(0, 205, 218, 1);
+    background-color: rgba(0, 205, 218, 1);
+    /* box-shadow: inset 6px 6px 0 #00CDDA; */
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: none;
+    background-color: rgab(0, 0, 0, 0);
+  }
+
+}
+
+.overview-text {
+  display: flex;
+  flex-direction: column;
+  width: 369px;
+  gap: 6px;
+
+  img {
+    width: 369px;
+    height: auto;
+  }
+}
+
+.class-title {
+  font-family: 'Shilla_Culture';
+  font-size: 24px;
+  line-height: 40px;
+}
+
+.class-text {
+  font-family: 'Shilla_Culture';
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+@font-face {
+  font-family: 'Chosun';
+  src: url('./ChosunCentennial.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Shilla_Culture';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/Shilla_CultureB-Bold.woff2') format('woff2');
 }
