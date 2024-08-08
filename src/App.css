@@ -1,4 +1,3 @@
-
 &::-webkit-scrollbar {
   width: 14px;
   height: 14px;
@@ -42,8 +41,9 @@
 .door2-container {
   width: 752px;
   height: 685px;
-  top: 318px;
-  left: 910px;
+  top: 218px;
+  left: 605px;
+  left: 905px;
   position: absolute;
 }
 
@@ -53,11 +53,23 @@
   position: relative;
 }
 
+/* 아이맥용 */
+/* .door2-image {
+  width: 752px;
+  height: 685px;
+  top: 418px;
+  left: 905px;
+  position: relative;
+} */
+
 .door2-image {
   width: 752px;
   height: 685px;
+  top: 218px;
+  left: 605px;
   position: relative;
 }
+
 
 .btn {
   width: 252px;
