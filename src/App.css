@@ -43,7 +43,8 @@
   width: 752px;
   height: 685px;
   top: 318px;
-  left: 584px;
+  left: 960px;
+  position: absolute;
 }
 
 .door-image {
@@ -55,9 +56,6 @@
 .door2-image {
   width: 752px;
   height: 685px;
-  top: 318px;
-  left: 584px;
-  position: absolute;
 }
 
 .btn {
