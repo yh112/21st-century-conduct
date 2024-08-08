@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import bgImg from "../assets/행실도_배경.png";
+import bgImg from "../assets/bg_haengsildo.png";
 import Navigation from "../components/Navigation";
 
 const Conduct = () => {

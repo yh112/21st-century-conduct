@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import bgImg from "../assets/배경1.png";
+import bgImg from "../assets/bg1.png";
 import Navigation from "../components/Navigation";
 import OverviewContent from "../components/OverviewContent";
-import Confucius from "../assets/공자.png";
-import Mencius from "../assets/맹자.png";
-import Xunzi from "../assets/순자.png";
-import Zhuzi from "../assets/주자.png";
-import FiveRV from "../assets/오륜오상표.png";
-import RiteofPassage from "../assets/관혼상제표.png";
-import HumanNatureView from "../assets/인간관표.png";
+import Confucius from "../assets/confucius.png";
+import Mencius from "../assets/mencius.png";
+import Xunzi from "../assets/xunzi.png";
+import Zhuzi from "../assets/zhuzi.png";
+import FiveRV from "../assets/rive_rites.png";
+import RiteofPassage from "../assets/marriage_rites.png";
+import HumanNatureView from "../assets/human_relationship.png";
 const Overview = () => {
   const [selectedKey, setSelectedKey] = useState(3);
   const [selectedClass, setSelectedClass] = useState([]);

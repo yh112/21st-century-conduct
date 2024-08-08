@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import bgImg from "../assets/배경1.png";
+import bgImg from "../assets/bg1.png";
 import Navigation from "../components/Navigation";
 
 const PastandPresent = () => {

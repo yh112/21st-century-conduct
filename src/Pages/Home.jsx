@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import landingImage from "../assets/배경2_분리.png";
-import btn1 from "../assets/배경.png";
-import btn2 from "../assets/유교개요.png";
-import btn3 from "../assets/행실도.png";
-import btn4 from "../assets/과거와현재.png";
+import landingImage from "../assets/bg_home.png";
+import btn1 from "../assets/btn_bg.png";
+import btn2 from "../assets/btn_overview.png";
+import btn3 from "../assets/btn_haengsildo.png";
+import btn4 from "../assets/btn_past_present.png";
 import Door from "../components/Door";
 
 const Home = () => {

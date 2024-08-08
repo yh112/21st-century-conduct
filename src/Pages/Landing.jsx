@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import backgroundImg from "../assets/배경1_분리.png";
-import doorImg from "../assets/문1_닫힘.png";
-import openDoorImg from "../assets/문1_열림.png";
-import btn from "../assets/state=Default.png";
-import hoverBtn from "../assets/state=hover.png";
+import backgroundImg from "../assets/bg_landing.png";
+import doorImg from "../assets/door1_closed.png";
+import openDoorImg from "../assets/door1_open.png";
+import door_shadow from "../assets/door1_shadow.png";
+import btn from "../assets/btn_visit.png";
+import hoverBtn from "../assets/btn_visit_hover.png";
 
 const Landing = () => {
   const [doorSrc, setDoorSrc] = useState(doorImg);
