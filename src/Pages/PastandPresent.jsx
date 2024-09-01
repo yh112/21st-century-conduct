@@ -5,6 +5,7 @@ import empty_circle from "../assets/empty_circle.png";
 import circle from "../assets/circle.png";
 import x_button from "../assets/Button_x.png";
 import pastandpresentcompare1 from "../assets/pastandpresentcompare1.png";
+import pastandpresentcompare2 from "../assets/pastandpresentcompare2.png";
 import bg_book from "../assets/bg_book.png";
 import text from "../assets/text.png";
 import image from "../assets/image.png";
@@ -14,6 +15,7 @@ const PastandPresent = () => {
   const [bookModal, setBookModal] = useState(false);
   const [compareModal, setCompareModal] = useState(false);
   const [compareIndex, setCompareIndex] = useState(0);
+  const [compareImg, setCompareImg] = useState(pastandpresentcompare1);
   const past = [
     "매일 어두운 새벽, 부모님을 찾아가 아침 문안을 드리고 아침 음식을 차려야 한다.",
     "부모님 앞에서는 감히 구역질, 트림, 재채기, 기침, 하품, 기지개를 하면 안된다.",
@@ -92,15 +94,23 @@ const PastandPresent = () => {
   }
 
   const openModal = (rowIndex, cellIndex) => {
+    console.log(rowIndex * 1 + cellIndex);
     setCompareIndex(rowIndex * 1 + cellIndex);
+    if ((rowIndex * 1 + cellIndex) === 0) {
+      console.log("0compareIndex", rowIndex * 1 + cellIndex);
+      setCompareImg(pastandpresentcompare1);
+    } else if ((rowIndex * 1 + cellIndex) === 1) {
+      console.log("1compareIndex", rowIndex * 1 + cellIndex);
+      setCompareImg(pastandpresentcompare2);
+    }
     setCompareModal(true);
   };
 
   return (
     <>
       {bookModal && (
-        <div className="pp-modal-bg">
-          <img className="pp-modal-bg-img" src={bg_book} />
+        <div className="pp-modal-container">
+          <img className="pp-modal-img" src={bg_book} />
           <div className="pp-modal-content">
             <img className="pp-modal-text" src={text} />
             <img className="pp-modal-image" src={image} />
@@ -113,11 +123,11 @@ const PastandPresent = () => {
         </div>
       )}
       {compareModal && (
-        <div className="pp-modal-bg">
-          <div className="pp-modal-content">
-            <img src={bg_book} />
-            <img src={pastandpresentcompare1} />
-            <img src={x_button} onClick={() => setCompareModal(false)} />
+        <div className="pp-compare-container">
+          <img className="x-btn" src={x_button} onClick={() => setCompareModal(false)} />
+          <img className="pp-compare-bg" src={bg_book} />
+          <div className="pp-compare-modal-content">
+            <img src={compareImg} />
           </div>
         </div>
       )}
@@ -142,7 +152,9 @@ const PastandPresent = () => {
               </div>
             </div>
             <div className="pp-title-right">
-              <div className="pp-book" onClick={() => setBookModal(true)}>참고 서적 보기</div>
+              <div className="pp-book" onClick={() => setBookModal(true)}>
+                참고 서적 보기
+              </div>
             </div>
           </div>
           <div className="pp-content">
@@ -191,7 +203,7 @@ const PastandPresent = () => {
                           onMouseLeave={() =>
                             setHoveredCell({ row: null, col: null })
                           }
-                          onClick={() => setCompareModal(true)}
+                          onClick={() => openModal(rowIndex, cellIndex)}
                         >
                           {cellContent}
                         </td>
