@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/capstonedesign/static/css/main.fbba9e48.css",
-    "main.js": "/capstonedesign/static/js/main.000c801f.js",
+    "main.css": "/capstonedesign/static/css/main.53e2ec2a.css",
+    "main.js": "/capstonedesign/static/js/main.064af6d1.js",
     "static/js/453.6fc33b34.chunk.js": "/capstonedesign/static/js/453.6fc33b34.chunk.js",
     "static/media/bg_home.png": "/capstonedesign/static/media/bg_home.df8168e753d2c185ec52.png",
     "static/media/bg_haengsildo.png": "/capstonedesign/static/media/bg_haengsildo.e073a12b3705a90b40e8.png",
@@ -9,13 +9,10 @@
     "static/media/bg1.png": "/capstonedesign/static/media/bg1.38e87e978dcc5e07b6dd.png",
     "static/media/door1_shadow.png": "/capstonedesign/static/media/door1_shadow.b21da48d74206010fde0.png",
     "static/media/pastandpresentcompare1.png": "/capstonedesign/static/media/pastandpresentcompare1.496b3eb98de50e0733e3.png",
+    "static/media/pastandpresentcompare2.png": "/capstonedesign/static/media/pastandpresentcompare2.1a68727153f62824ed10.png",
     "static/media/door2_set.png": "/capstonedesign/static/media/door2_set.e04b139f25cd2ea98222.png",
     "static/media/door2_shadow.png": "/capstonedesign/static/media/door2_shadow.ffa6041e0cbdf30c9301.png",
     "static/media/bg_bgimg.png": "/capstonedesign/static/media/bg_bgimg.bc202dbc0b699c2bc37a.png",
-    "static/media/door2_open4.png": "/capstonedesign/static/media/door2_open4.54456a8b2c1f1cfa6c95.png",
-    "static/media/door2_open2.png": "/capstonedesign/static/media/door2_open2.ba798e3795aaf38a176d.png",
-    "static/media/door2_open3.png": "/capstonedesign/static/media/door2_open3.ed34b8127f82971ad3c7.png",
-    "static/media/door2_open1.png": "/capstonedesign/static/media/door2_open1.e0a0de14ea796b21f415.png",
     "static/media/image.png": "/capstonedesign/static/media/image.a367dc16f6dd8a0936a1.png",
     "static/media/bg_book.png": "/capstonedesign/static/media/bg_book.cad38dff271ddbcadae3.png",
     "static/media/text.png": "/capstonedesign/static/media/text.cd7849e9d8763b309e44.png",
@@ -63,12 +60,12 @@
     "static/media/shin.png": "/capstonedesign/static/media/shin.f47c66edbc61120350a8.png",
     "static/media/oh.png": "/capstonedesign/static/media/oh.67ba1b61017b535f172a.png",
     "index.html": "/capstonedesign/index.html",
-    "main.fbba9e48.css.map": "/capstonedesign/static/css/main.fbba9e48.css.map",
-    "main.000c801f.js.map": "/capstonedesign/static/js/main.000c801f.js.map",
+    "main.53e2ec2a.css.map": "/capstonedesign/static/css/main.53e2ec2a.css.map",
+    "main.064af6d1.js.map": "/capstonedesign/static/js/main.064af6d1.js.map",
     "453.6fc33b34.chunk.js.map": "/capstonedesign/static/js/453.6fc33b34.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fbba9e48.css",
-    "static/js/main.000c801f.js"
+    "static/css/main.53e2ec2a.css",
+    "static/js/main.064af6d1.js"
   ]
 }
