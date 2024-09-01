@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/capstonedesign/static/css/main.8a8822ab.css",
-    "main.js": "/capstonedesign/static/js/main.13ea7d92.js",
+    "main.css": "/capstonedesign/static/css/main.66b00b0a.css",
+    "main.js": "/capstonedesign/static/js/main.2a607ccf.js",
     "static/js/453.7b154009.chunk.js": "/capstonedesign/static/js/453.7b154009.chunk.js",
     "static/media/bg_home.png": "/capstonedesign/static/media/bg_home.df8168e753d2c185ec52.png",
     "static/media/bg_haengsildo.png": "/capstonedesign/static/media/bg_haengsildo.e073a12b3705a90b40e8.png",
@@ -12,7 +12,6 @@
     "static/media/pastandpresentcompare1.png": "/capstonedesign/static/media/pastandpresentcompare1.496b3eb98de50e0733e3.png",
     "static/media/door2_set.png": "/capstonedesign/static/media/door2_set.e04b139f25cd2ea98222.png",
     "static/media/door2_shadow.png": "/capstonedesign/static/media/door2_shadow.ffa6041e0cbdf30c9301.png",
-    "static/media/ChosunCentennial.ttf": "/capstonedesign/static/media/ChosunCentennial.5a0298767b47f2acc2c9.ttf",
     "static/media/bg_bgimg.png": "/capstonedesign/static/media/bg_bgimg.bc202dbc0b699c2bc37a.png",
     "static/media/door2_open4.png": "/capstonedesign/static/media/door2_open4.54456a8b2c1f1cfa6c95.png",
     "static/media/door2_open2.png": "/capstonedesign/static/media/door2_open2.ba798e3795aaf38a176d.png",
@@ -31,12 +30,12 @@
     "static/media/confucius.png": "/capstonedesign/static/media/confucius.dbc56d5a4608134f62b6.png",
     "static/media/mencius.png": "/capstonedesign/static/media/mencius.54ae4448be338502700d.png",
     "index.html": "/capstonedesign/index.html",
-    "main.8a8822ab.css.map": "/capstonedesign/static/css/main.8a8822ab.css.map",
-    "main.13ea7d92.js.map": "/capstonedesign/static/js/main.13ea7d92.js.map",
+    "main.66b00b0a.css.map": "/capstonedesign/static/css/main.66b00b0a.css.map",
+    "main.2a607ccf.js.map": "/capstonedesign/static/js/main.2a607ccf.js.map",
     "453.7b154009.chunk.js.map": "/capstonedesign/static/js/453.7b154009.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8a8822ab.css",
-    "static/js/main.13ea7d92.js"
+    "static/css/main.66b00b0a.css",
+    "static/js/main.2a607ccf.js"
   ]
 }
