@@ -120,11 +120,11 @@
 
 
 /* 아이맥 27인치 2560X1440 */
-.door2-container {
+.door2-container { 
   width: 752px;
   height: 685px;
   top: 250px;
-  left: 380px;
+  left: 25vw;
   /* top: calc(218px * var(--scale-y)); */
   /* left: calc(605px * var(--scale-x)); */
   position: absolute;
