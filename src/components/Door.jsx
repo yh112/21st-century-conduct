@@ -5,7 +5,7 @@ import closeDoorImg from "../assets/door2_closed.png";
 import openDoorImg from "../assets/door2_set.png";
 import door_shadow from "../assets/door2_shadow.png";
 
-const Door = ({ buttonImg, link }) => {
+const Door = ({ buttonImg, link, index }) => {
   const [doorSrc, setDoorSrc] = useState(closeDoorImg);
   const [doorState, setDoorState] = useState(true);
 
@@ -28,10 +28,11 @@ const Door = ({ buttonImg, link }) => {
       onMouseOver={onDoorMouseOver}
       onMouseOut={onDoorMouseOut}
     >
-      <img className={doorState ? "door-image" : "door-image-open"} src={doorSrc} />
+      {doorState && <img className="door-image" style={{left: index*366}} src={closeDoorImg} />}
+      {!doorState && <img className={'door-image-open-'+index}  src={openDoorImg}/>}
       {!doorState && (
         <NavLink to={link}>
-          <img className="homeBtn" src={buttonImg} />
+          <img className={"homeBtn-"+index} src={buttonImg} />
         </NavLink>
       )}
     </div>

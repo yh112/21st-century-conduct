@@ -5,12 +5,15 @@ import empty_circle from "../assets/empty_circle.png";
 import circle from "../assets/circle.png";
 import x_button from "../assets/Button_x.png";
 import pastandpresentcompare1 from "../assets/pastandpresentcompare1.png";
-import pastandpresentcompare2 from "../assets/pastandpresentcompare2.png";
+import bg_book from "../assets/bg_book.png";
+import text from "../assets/text.png";
+import image from "../assets/image.png";
 
 const PastandPresent = () => {
   const [selectedKey, setSelectedKey] = useState(5);
   const [bookModal, setBookModal] = useState(false);
   const [compareModal, setCompareModal] = useState(false);
+  const [compareIndex, setCompareIndex] = useState(0);
   const past = [
     "매일 어두운 새벽, 부모님을 찾아가 아침 문안을 드리고 아침 음식을 차려야 한다.",
     "부모님 앞에서는 감히 구역질, 트림, 재채기, 기침, 하품, 기지개를 하면 안된다.",
@@ -87,25 +90,40 @@ const PastandPresent = () => {
     }
     tableData.push(row);
   }
+
+  const openModal = (rowIndex, cellIndex) => {
+    setCompareIndex(rowIndex * 1 + cellIndex);
+    setCompareModal(true);
+  };
+
   return (
     <>
       {bookModal && (
         <div className="pp-modal-bg">
+          <img className="pp-modal-bg-img" src={bg_book} />
           <div className="pp-modal-content">
+            <img className="pp-modal-text" src={text} />
+            <img className="pp-modal-image" src={image} />
           </div>
-          <img src={x_button} onClick={() => setBookModal(false)}/>
+          <img
+            className="x-btn"
+            src={x_button}
+            onClick={() => setBookModal(false)}
+          />
         </div>
       )}
       {compareModal && (
         <div className="pp-modal-bg">
           <div className="pp-modal-content">
-          <img src={pastandpresentcompare1}/>
+            <img src={bg_book} />
+            <img src={pastandpresentcompare1} />
+            <img src={x_button} onClick={() => setCompareModal(false)} />
           </div>
-          <img src={x_button} onClick={() => setCompareModal(false)}/>
         </div>
       )}
       <div className="background">
         <Navigation selectedKey={selectedKey} setSelectedKey={setSelectedKey} />
+        <img className="background-image" src={bgImg} alt="background" />
         <div className="pp-container">
           <div className="pp-title">
             <div className="pp-title-left">
@@ -123,8 +141,8 @@ const PastandPresent = () => {
                 **상자를 눌러 변화된 유교의 행동 규범을 살펴보세요
               </div>
             </div>
-            <div className="pp-title-right" onClick={() => setBookModal(true)}>
-              참고 서적 보기
+            <div className="pp-title-right">
+              <div className="pp-book" onClick={() => setBookModal(true)}>참고 서적 보기</div>
             </div>
           </div>
           <div className="pp-content">
@@ -185,7 +203,6 @@ const PastandPresent = () => {
             </table>
           </div>
         </div>
-        <img className="background-image" src={bgImg} alt="background" />
       </div>
     </>
   );

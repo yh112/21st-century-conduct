@@ -1,18 +1,18 @@
 /* :root { */
-  /* --base-width: 1920; */
-  /* 원래 배경 너비 */
-  /* --base-height: 1080; */
-  /* 원래 배경 높이 */
-  /* --new-width: 2560; /* 아이맥 너비 */
-  /* --new-height: 1440; 아이맥 높이 */
-  /* --new-width: 1920; */
-  /* 아이맥 너비 */
-  /* --new-height: 1080; */
-  /* 아이맥 높이 */
+/* --base-width: 1920; */
+/* 원래 배경 너비 */
+/* --base-height: 1080; */
+/* 원래 배경 높이 */
+/* --new-width: 2560; /* 아이맥 너비 */
+/* --new-height: 1440; 아이맥 높이 */
+/* --new-width: 1920; */
+/* 아이맥 너비 */
+/* --new-height: 1080; */
+/* 아이맥 높이 */
 
-  /* 위치 조정 비율 계산 */
-  /* --scale-x: calc(var(--new-width) / var(--base-width)); */
-  /* --scale-y: calc(var(--new-height) / var(--base-height)); */
+/* 위치 조정 비율 계산 */
+/* --scale-x: calc(var(--new-width) / var(--base-width)); */
+/* --scale-y: calc(var(--new-height) / var(--base-height)); */
 /* } */
 
 &::-webkit-scrollbar {
@@ -52,23 +52,61 @@
   /* top: calc(367px * var(--scale-y)); */
   /* left: calc(206px * var(--scale-x)); */
   top: 367px;
-  left: 206px;
+  left: 45px;
   width: fit-content;
   height: 589px;
   position: absolute;
 }
 
+.door-btn-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 326px;
+  height: 589px;
+}
+
 .door-image {
   width: 326px;
   height: 589px;
-  position: relative;
-  z-index: 100px;
+  position: absolute;
+  z-index: 100;
 }
 
-.door-image-open {
-  width: 600px;
-  height: 1000px;
-  position: relative;
+.door-image-open-0 {
+  width: 890px;
+  height: auto;
+  top: -290px;
+  left: -286px;
+  position: absolute;
+  z-index: 99;
+}
+
+.door-image-open-1 {
+  width: 890px;
+  height: auto;
+  top: -290px;
+  left: 80px;
+  position: absolute;
+  z-index: 99;
+}
+
+.door-image-open-2 {
+  width: 890px;
+  height: auto;
+  top: -290px;
+  left: 440px;
+  position: absolute;
+  z-index: 99;
+}
+
+.door-image-open-3 {
+  width: 890px;
+  height: auto;
+  top: -290px;
+  left: 820px;
+  position: absolute;
+  z-index: 99;
 }
 
 /* 아이맥용 */
@@ -133,19 +171,48 @@
   z-index: 101;
 }
 
-.door-btn-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.homeBtn {
+.homeBtn-0 {
   width: 200px;
   height: 62px;
-  top: -310px;
+  top: 280px;
   left: 63px;
   /* top: calc(-310px * var(--scale-y)); */
   /* left: calc(63px * var(--scale-x)); */
   position: relative;
+  z-index: 101;
+}
+
+.homeBtn-1 {
+  width: 200px;
+  height: 62px;
+  top: 280px;
+  left: 430px;
+  /* top: calc(-310px * var(--scale-y)); */
+  /* left: calc(63px * var(--scale-x)); */
+  position: relative;
+  z-index: 101;
+}
+
+.homeBtn-2 {
+  width: 200px;
+  height: 62px;
+  top: 280px;
+  left: 790px;
+  /* top: calc(-310px * var(--scale-y)); */
+  /* left: calc(63px * var(--scale-x)); */
+  position: relative;
+  z-index: 101;
+}
+
+.homeBtn-3 {
+  width: 200px;
+  height: 62px;
+  top: 280px;
+  left: 1170px;
+  /* top: calc(-310px * var(--scale-y)); */
+  /* left: calc(63px * var(--scale-x)); */
+  position: relative;
+  z-index: 101;
 }
 
 .navigation {
@@ -165,7 +232,7 @@
 }
 
 .navigation-content {
-  z-index: 6;
+  z-index: 200;
   display: flex;
   width: 80px;
   height: 216px;
@@ -178,6 +245,7 @@
   justify-content: center;
   cursor: pointer;
   color: rgba(0, 0, 0, 1);
+  position: relative;
 
   border-bottom: 1px solid black;
 
@@ -257,35 +325,77 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 201;
+}
+
+.pp-modal-bg-img {
+  width: 1920px;
+  height: 676px;
+  top: 200px;
+  left: 360px;
 }
 
 .pp-modal-content {
-  width: fit-content;
-  height: fit-content;
+  width: 1920px;
+  height: 630px;
   display: flex;
+  position: absolute;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
-  z-index: 101;
+  /* align-items: center; */
+  z-index: 202;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  left: 20px;
+  box-sizing: border-box;
+  border-top: 6px solid black;
 
-  img {
-    width: 1200px;
-    height: 680px;
-    top: 200px;
-    left: 360px;
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
 
+  &::-webkit-scrollbar-thumb {
+    outline: none;
+    border: 8px solid rgba(0, 205, 218, 1);
+    background-color: rgba(0, 205, 218, 1);
+    /* box-shadow: inset 6px 6px 0 #00CDDA; */
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: none;
+    background-color: rgab(0, 0, 0, 0);
   }
 }
 
-.pp-container {
+.pp-modal-text {
+  width: 6140px;
+  height: 220px;
+}
+
+.pp-modal-image {
+  width: 6140px;
+  height: 400px;
+}
+
+.x-btn {
+  width: 32px;
+  height: 32px;
   position: absolute;
+  top: 900px;
+  left: 860px;
+  cursor: pointer;
+  z-index: 203;
+}
+
+.pp-container {
   width: 1920px;
   height: 1000px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
 
   img {
     width: 32px;
@@ -298,8 +408,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  gap: 20px;
-  width: 100vw;
+  width: 100%;
   height: 44px;
 }
 
@@ -346,13 +455,19 @@
 }
 
 .pp-title-right {
-  width: 50%;
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pp-book {
   font-family: 'Chosun';
   font-size: 28px;
   font-weight: 400;
   line-height: 44px;
-  text-align: right;
-
+  text-align: left;
+  cursor: pointer;
+  width: 171px;
 }
 
 .pp-content {
@@ -504,6 +619,81 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 40px;
+}
+
+.house-container {
+  width: 81px;
+  height: 88px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+
+.house-content {
+  position: absolute;
+  z-index: 100;
+}
+
+.house-content-hover {
+  position: absolute;
+  top: -35px;
+  left: -22px;
+  z-index: 100;
+}
+
+.house-title {
+  position: absolute;
+  top: -45px;
+  z-index: 101;
+}
+
+.house-name {
+  position: absolute;
+  font-family: 'Chosun';
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: rgba(0, 0, 0, 1);
+  padding: 0px;
+  z-index: 101;
+  top: 35px;
+}
+
+.cloud1 {
+  width: 845px;
+  height: 267px;
+  position: absolute;
+  top: 512px;
+  left: 60px;
+  z-index: 500;
+}
+
+.cloud2 {
+  width: 526px;
+  height: 250px;
+  position: absolute;
+  top: 532px;
+  left: 1127px;
+  z-index: 500;
+}
+
+.cloud3 {
+  width: 543px;
+  height: 236px;
+  position: absolute;
+  top: 277px;
+  left: 533px;
+  z-index: 500;
+}
+
+.cloud4 {
+  width: 355px;
+  height: 140px;
+  position: absolute;
+  top: 254px;
+  left: 1416px;
+  z-index: 500;
 }
 
 @font-face {

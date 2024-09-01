@@ -15,10 +15,10 @@ const Home = () => {
     <div className="background">
       <img className="background-image" src={landingImage} />
       <div className="door-container">
-        <Door buttonImg={btn1} link="/background" />
-        <Door buttonImg={btn2} link="/overview" />
-        <Door buttonImg={btn3} link="/haengsildo" />
-        <Door buttonImg={btn4} link="/pastandpresent" />
+        <Door buttonImg={btn1} link="/background" index="0"/>
+        <Door buttonImg={btn2} link="/overview" index="1"/>
+        <Door buttonImg={btn3} link="/haengsildo" index="2"/>
+        <Door buttonImg={btn4} link="/pastandpresent" index="3"/>
       </div>
     </div>
   );
