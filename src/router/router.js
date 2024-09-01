@@ -7,35 +7,40 @@ import Overview from "../pages/Overview";
 import Conduct from "../pages/Conduct";
 import PastandPresent from "../pages/PastandPresent";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      children: [
+        {
+          path: "/",
+          element: <Landing />,
+        },
+        {
+          path: "/home",
+          element: <Home />,
+        },
+        {
+          path: "/background",
+          element: <Background />,
+        },
+        {
+          path: "/overview",
+          element: <Overview />,
+        },
+        {
+          path: "/conduct",
+          element: <Conduct />,
+        },
+        {
+          path: "/pastandpresent",
+          element: <PastandPresent />,
+        },
+      ],
+    },
+  ],
   {
-    children: [
-      {
-        path: "/",
-        element: <Landing />,
-      },
-      {
-        path: "/home",
-        element: <Home />,
-      },
-      {
-        path: "/background",
-        element: <Background />,
-      },
-      {
-        path: "/overview",
-        element: <Overview />,
-      },
-      {
-        path: "/conduct",
-        element: <Conduct />,
-      },
-      {
-        path: "/pastandpresent",
-        element: <PastandPresent />,
-      }
-    ],
-  },
-]);
+    basename: process.env.PUBLIC_URL,
+  }
+);
 
 export default router;
