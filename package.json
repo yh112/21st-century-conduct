@@ -13,6 +13,8 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+
+  "homepage": "https://yh112.github.io/capstonedesign/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -38,6 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage": "https://yh112.github.io/capstonedesign/"
+  }
 }
