@@ -1,19 +1,19 @@
-:root {
-  --base-width: 1920;
+/* :root { */
+  /* --base-width: 1920; */
   /* 원래 배경 너비 */
-  --base-height: 1080;
+  /* --base-height: 1080; */
   /* 원래 배경 높이 */
   /* --new-width: 2560; /* 아이맥 너비 */
   /* --new-height: 1440; 아이맥 높이 */
-  --new-width: 1920;
+  /* --new-width: 1920; */
   /* 아이맥 너비 */
-  --new-height: 1080;
+  /* --new-height: 1080; */
   /* 아이맥 높이 */
 
   /* 위치 조정 비율 계산 */
-  --scale-x: calc(var(--new-width) / var(--base-width));
-  --scale-y: calc(var(--new-height) / var(--base-height));
-}
+  /* --scale-x: calc(var(--new-width) / var(--base-width)); */
+  /* --scale-y: calc(var(--new-height) / var(--base-height)); */
+/* } */
 
 &::-webkit-scrollbar {
   width: 14px;
@@ -33,39 +33,28 @@
   background-color: rgab(0, 0, 0, 0);
 }
 
-.background {
+/* .background {
   overflow: hidden;
   overflow-y: hidden;
   overflow-x: hidden;
-}
+} */
 
 .background-image {
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
 
 .door-container {
   gap: 60px;
   display: flex;
   flex-direction: row;
-  top: calc(367px * var(--scale-y));
-  left: calc(206px * var(--scale-x));
-  /* top: 367px;
-  left: 206px; */
+  /* top: calc(367px * var(--scale-y)); */
+  /* left: calc(206px * var(--scale-x)); */
+  top: 367px;
+  left: 206px;
   width: fit-content;
   height: 589px;
-  position: absolute;
-}
-
-/* 아이맥 27인치 2560X1440 */
-.door2-container {
-  width: 752px;
-  height: 685px;
-  /* top: 218px;
-  left: 605px;
-  left: 905px; */
-  top: calc(218px * var(--scale-y));
-  left: calc(605px * var(--scale-x));
   position: absolute;
 }
 
@@ -91,27 +80,57 @@
   position: relative;
 } */
 
+
+/* 아이맥 27인치 2560X1440 */
+.door2-container {
+  width: 752px;
+  height: 685px;
+  top: 250px;
+  left: 380px;
+  /* top: calc(218px * var(--scale-y)); */
+  /* left: calc(605px * var(--scale-x)); */
+  position: absolute;
+}
+
 .door2-image {
   width: 752px;
   height: 685px;
-  /* top: 218px; */
-  top: calc(218px * var(--scale-y));
-  left: calc(605px * var(--scale-x));
+  /* top: 210px;
+  left: -40px; */
+  /* top: calc(218px * var(--scale-y)); */
+  /* left: calc(605px * var(--scale-x)); */
   /* left: 605px; */
-  position: relative;
+  /* position: relative; */
+  position: absolute;
+  z-index: 100;
+}
+
+.door2-image-shadow {
+  width: 1920px;
+  height: 1080px;
+  top: -320px;
+  left: -580px;
+  /* top: calc(218px * var(--scale-y)); */
+  /* left: calc(605px * var(--scale-x)); */
+  /* left: 605px; */
+  /* position: relative; */
+  position: absolute;
+  z-index: 99;
 }
 
 
 .btn {
   width: 252px;
   height: 72px;
-  /* top: 626px;
-  left: 834px; */
-  top: calc(626px * var(--scale-y));
-  left: calc(834px * var(--scale-x));
+  top: 320px;
+  left: 250px;
+  /* left: 834px; */
+  /* top: calc(626px * var(--scale-y)); */
+  /* left: calc(834px * var(--scale-x)); */
   gap: 0px;
   opacity: 0px;
   position: absolute;
+  z-index: 101;
 }
 
 .door-btn-container {
@@ -122,10 +141,10 @@
 .homeBtn {
   width: 200px;
   height: 62px;
-  /* top: -310px;
-  left: 63px; */
-  top: calc(-310px * var(--scale-y));
-  left: calc(63px * var(--scale-x));
+  top: -310px;
+  left: 63px;
+  /* top: calc(-310px * var(--scale-y)); */
+  /* left: calc(63px * var(--scale-x)); */
   position: relative;
 }
 
@@ -176,8 +195,10 @@
 
 .bg-container {
   position: absolute;
-  top: calc(132px * var(--scale-y));
-  left: calc(100px * var(--scale-x));
+  /* top: calc(132px * var(--scale-y));
+  left: calc(100px * var(--scale-x)); */
+  top: 132px;
+  left: 100px;
   width: 1640px;
   height: 1000px;
   overflow-y: scroll;
@@ -361,10 +382,10 @@
 .overview-container {
   width: fit-content;
   height: 896px;
-  /* top: 132px;
-  left: 51px; */
-  top: calc(132px * var(--scale-y));
-  left: calc(51px * var(--scale-x));
+  top: 132px;
+  left: 51px;
+  /* top: calc(132px * var(--scale-y)); */
+  /* left: calc(51px * var(--scale-x)); */
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -487,7 +508,7 @@
 
 @font-face {
   font-family: 'Chosun';
-  src: url('./ChosunCentennial.ttf') format('truetype');
+  src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/ChosunCentennial.woff2') format('woff2');
 }
 
 @font-face {

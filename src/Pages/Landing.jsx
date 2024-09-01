@@ -9,21 +9,20 @@ import hoverBtn from "../assets/btn_visit_hover.png";
 
 const Landing = () => {
   const [doorSrc, setDoorSrc] = useState(doorImg);
-  const [doorState, setDoorState] = useState(true);
+  const [doorState, setDoorState] = useState(false);
   const [btnSrc, setBtnSrc] = useState(btn);
 
   const onDoorContainerMouseOver = () => {
-    setDoorSrc(openDoorImg);
     setDoorState(false);
+    setDoorSrc(openDoorImg);
   };
 
   const onDoorContainerMouseOut = (e) => {
-    // 버튼 영역에 있는 경우 문을 닫지 않음
     if (e.relatedTarget && e.currentTarget.contains(e.relatedTarget)) {
       return;
     }
-    setDoorSrc(doorImg);
     setDoorState(true);
+    setDoorSrc(doorImg);
   };
 
   return (
@@ -35,6 +34,7 @@ const Landing = () => {
         onMouseOut={onDoorContainerMouseOut}
       >
         <img className="door2-image" src={doorSrc} />
+        {!doorState && <img className="door2-image-shadow" src={door_shadow} />}
         {!doorState && (
           <NavLink to="/home">
             <img
