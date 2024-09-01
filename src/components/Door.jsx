@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import closeDoorImg from "../assets/door2_closed.png";
-import openDoorImg from "../assets/door2_open.png";
+// import openDoorImg from "../assets/door2_open.png";
+import openDoorImg from "../assets/door2_set.png";
 import door_shadow from "../assets/door2_shadow.png";
 
 const Door = ({ buttonImg, link }) => {
@@ -27,7 +28,7 @@ const Door = ({ buttonImg, link }) => {
       onMouseOver={onDoorMouseOver}
       onMouseOut={onDoorMouseOut}
     >
-      <img className="door-image" src={doorSrc} />
+      <img className={doorState ? "door-image" : "door-image-open"} src={doorSrc} />
       {!doorState && (
         <NavLink to={link}>
           <img className="homeBtn" src={buttonImg} />

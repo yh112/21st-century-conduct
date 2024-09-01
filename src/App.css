@@ -1,3 +1,20 @@
+:root {
+  --base-width: 1920;
+  /* 원래 배경 너비 */
+  --base-height: 1080;
+  /* 원래 배경 높이 */
+  /* --new-width: 2560; /* 아이맥 너비 */
+  /* --new-height: 1440; 아이맥 높이 */
+  --new-width: 1920;
+  /* 아이맥 너비 */
+  --new-height: 1080;
+  /* 아이맥 높이 */
+
+  /* 위치 조정 비율 계산 */
+  --scale-x: calc(var(--new-width) / var(--base-width));
+  --scale-y: calc(var(--new-height) / var(--base-height));
+}
+
 &::-webkit-scrollbar {
   width: 14px;
   height: 14px;
@@ -31,25 +48,37 @@
   gap: 60px;
   display: flex;
   flex-direction: row;
-  top: 367px;
-  left: 206px;
+  top: calc(367px * var(--scale-y));
+  left: calc(206px * var(--scale-x));
+  /* top: 367px;
+  left: 206px; */
   width: fit-content;
   height: 589px;
   position: absolute;
 }
 
+/* 아이맥 27인치 2560X1440 */
 .door2-container {
   width: 752px;
   height: 685px;
-  top: 218px;
+  /* top: 218px;
   left: 605px;
-  left: 905px;
+  left: 905px; */
+  top: calc(218px * var(--scale-y));
+  left: calc(605px * var(--scale-x));
   position: absolute;
 }
 
 .door-image {
   width: 326px;
   height: 589px;
+  position: relative;
+  z-index: 100px;
+}
+
+.door-image-open {
+  width: 600px;
+  height: 1000px;
   position: relative;
 }
 
@@ -65,8 +94,10 @@
 .door2-image {
   width: 752px;
   height: 685px;
-  top: 218px;
-  left: 605px;
+  /* top: 218px; */
+  top: calc(218px * var(--scale-y));
+  left: calc(605px * var(--scale-x));
+  /* left: 605px; */
   position: relative;
 }
 
@@ -74,8 +105,10 @@
 .btn {
   width: 252px;
   height: 72px;
-  top: 626px;
-  left: 834px;
+  /* top: 626px;
+  left: 834px; */
+  top: calc(626px * var(--scale-y));
+  left: calc(834px * var(--scale-x));
   gap: 0px;
   opacity: 0px;
   position: absolute;
@@ -89,8 +122,10 @@
 .homeBtn {
   width: 200px;
   height: 62px;
-  top: -310px;
-  left: 63px;
+  /* top: -310px;
+  left: 63px; */
+  top: calc(-310px * var(--scale-y));
+  left: calc(63px * var(--scale-x));
   position: relative;
 }
 
@@ -139,11 +174,197 @@
   color: rgba(111, 229, 255, 1);
 }
 
+.bg-container {
+  position: absolute;
+  top: calc(132px * var(--scale-y));
+  left: calc(100px * var(--scale-x));
+  width: 1640px;
+  height: 1000px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    outline: none;
+    border: 8px solid rgba(0, 205, 218, 1);
+    background-color: rgba(0, 205, 218, 1);
+    /* box-shadow: inset 6px 6px 0 #00CDDA; */
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: none;
+    background-color: rgab(0, 0, 0, 0);
+  }
+}
+
+.title-name {
+  /* top: calc(132px * var(--scale-y));
+  left: calc(100px * var(--scale-x)); */
+  font-family: 'Shilla_Culture';
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 44px;
+  margin: 0px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 1);
+}
+
+.line {
+  position: absolute;
+  width: 1640px;
+  height: 1.5px;
+  /* top: calc(196px * var(--scale-y));
+  left: calc(100px * var(--scale-x)); */
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.bg-text {
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+
+.pp-modal-bg {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.pp-modal-content {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  z-index: 101;
+
+  img {
+    width: 1200px;
+    height: 680px;
+    top: 200px;
+    left: 360px;
+
+  }
+}
+
+.pp-container {
+  position: absolute;
+  width: 1920px;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.pp-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  width: 100vw;
+  height: 44px;
+}
+
+.pp-title-pp {
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.pp-title-set {
+  /* width: 91px; */
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.pp-title-left {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.pp-text {
+  font-family: 'Chosun';
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 44px;
+  color: rgba(0, 0, 0, 1);
+  display: flex;
+  align-items: center;
+}
+
+.pp-notice {
+  font-family: 'SUIT';
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.pp-title-right {
+  width: 50%;
+  font-family: 'Chosun';
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 44px;
+  text-align: right;
+
+}
+
+.pp-content {
+  width: 1738px;
+  height: 1000px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    outline: none;
+    border: 8px solid rgba(0, 205, 218, 1);
+    background-color: rgba(0, 205, 218, 1);
+    /* box-shadow: inset 6px 6px 0 #00CDDA; */
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: none;
+    background-color: rgab(0, 0, 0, 0);
+  }
+}
+
 .overview-container {
   width: fit-content;
   height: 896px;
-  top: 132px;
-  left: 51px;
+  /* top: 132px;
+  left: 51px; */
+  top: calc(132px * var(--scale-y));
+  left: calc(51px * var(--scale-x));
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -272,4 +493,9 @@
 @font-face {
   font-family: 'Shilla_Culture';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/Shilla_CultureB-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SUIT';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
 }
