@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import home from "../assets/home.png";
 import home_hover from "../assets/home_hover.png";
 
-const House = ({ family, top, left, src }) => {
+const House = ({ family, top, left, src, onClick }) => {
   const [homeSrc, setHomeSrc] = useState(home);
   const [homeState, setHomeState] = useState(false);
   const onMouseOver = () => {
@@ -14,7 +14,7 @@ const House = ({ family, top, left, src }) => {
 
   return (
     <>
-      <div className="house-container" style={{ top: top, left: left }}>
+      <div className="house-container" style={{ top: top, left: left }} onClick={onClick}>
         {homeState && <img className="house-title" src={src} />}
         {!homeState && (
           <img

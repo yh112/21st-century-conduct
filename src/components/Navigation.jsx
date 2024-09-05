@@ -6,7 +6,7 @@ const Navigation = ({ selectedKey, setSelectedKey }) => {
     <div className="navigation">
       <div className="navigation-container">
         <Link
-          to="/home"
+          to="/"
           style={{
             textDecoration: "none",
           }}
@@ -75,7 +75,7 @@ const Navigation = ({ selectedKey, setSelectedKey }) => {
             className={`navigation-content ${selectedKey === 5 ? "hover" : ""}`}
             key={5}
           >
-            과거와 현재
+            과거와현재
           </div>
         </Link>
       </div>

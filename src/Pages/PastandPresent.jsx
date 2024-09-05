@@ -3,12 +3,14 @@ import bgImg from "../assets/bg1.png";
 import Navigation from "../components/Navigation";
 import empty_circle from "../assets/empty_circle.png";
 import circle from "../assets/circle.png";
-import x_button from "../assets/Button_x.png";
+import x_button from "../assets/btn_x.png";
 import pastandpresentcompare1 from "../assets/pastandpresentcompare1.png";
 import pastandpresentcompare2 from "../assets/pastandpresentcompare2.png";
 import bg_book from "../assets/bg_book.png";
 import text from "../assets/text.png";
 import image from "../assets/image.png";
+import joong from "../assets/joong.png";
+import underline from "../assets/underline.png";
 
 const PastandPresent = () => {
   const [selectedKey, setSelectedKey] = useState(5);
@@ -16,6 +18,7 @@ const PastandPresent = () => {
   const [compareModal, setCompareModal] = useState(false);
   const [compareIndex, setCompareIndex] = useState(0);
   const [compareImg, setCompareImg] = useState(pastandpresentcompare1);
+  const [hover, setHover] = useState(false);
   const past = [
     "매일 어두운 새벽, 부모님을 찾아가 아침 문안을 드리고 아침 음식을 차려야 한다.",
     "부모님 앞에서는 감히 구역질, 트림, 재채기, 기침, 하품, 기지개를 하면 안된다.",
@@ -83,6 +86,15 @@ const PastandPresent = () => {
   const rows = 6;
   const cols = 5;
   const [hoveredCell, setHoveredCell] = useState({ row: null, col: null });
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setBookModal(false);
+      setIsClosing(false);
+    }, 100);
+  };
   const tableData = [];
   for (let i = 0; i < rows; i++) {
     const row = [];
@@ -96,10 +108,10 @@ const PastandPresent = () => {
   const openModal = (rowIndex, cellIndex) => {
     console.log(rowIndex * 1 + cellIndex);
     setCompareIndex(rowIndex * 1 + cellIndex);
-    if ((rowIndex * 1 + cellIndex) === 0) {
+    if (rowIndex * 1 + cellIndex === 0) {
       console.log("0compareIndex", rowIndex * 1 + cellIndex);
       setCompareImg(pastandpresentcompare1);
-    } else if ((rowIndex * 1 + cellIndex) === 1) {
+    } else if (rowIndex * 1 + cellIndex === 1) {
       console.log("1compareIndex", rowIndex * 1 + cellIndex);
       setCompareImg(pastandpresentcompare2);
     }
@@ -110,24 +122,67 @@ const PastandPresent = () => {
     <>
       {bookModal && (
         <div className="pp-modal-container">
-          <img className="pp-modal-img" src={bg_book} />
-          <div className="pp-modal-content">
+          <img
+            className="pp-modal-img"
+            src={bg_book}
+            style={isClosing ? { animation: "fadeOutUp 0.2s" } : {}}
+          />
+          <div
+            className="pp-modal-content"
+            style={isClosing ? { animation: "fadeOutUp 0.2s" } : {}}
+          >
             <img className="pp-modal-text" src={text} />
             <img className="pp-modal-image" src={image} />
           </div>
-          <img
-            className="x-btn"
-            src={x_button}
-            onClick={() => setBookModal(false)}
-          />
+          {!isClosing && (
+            <img className="x-btn" src={x_button} onClick={handleClose} />
+          )}
         </div>
       )}
       {compareModal && (
         <div className="pp-compare-container">
-          <img className="x-btn" src={x_button} onClick={() => setCompareModal(false)} />
+          <img
+            className="x-btn"
+            src={x_button}
+            onClick={() => setCompareModal(false)}
+          />
           <img className="pp-compare-bg" src={bg_book} />
           <div className="pp-compare-modal-content">
             <img src={compareImg} />
+            {compareIndex === 1 && (
+              <div className="pp-compare">
+                <div className="pp-compare-text">
+                  • 식에게는 어린 아우가 있는데 이미 자라서 어른이 되니 식이
+                  전택과 재물을 모두 아우에게 주고 다만 기르던 양 백 여 마리를
+                  가지고 홀로 산중에 들어가 십 여 년을 양을 쳐 양이 천여 마리에
+                  이르러 논밭과 집을 사두었다. 그 동생이 가산을 모두 탕진하자
+                  식이 또 다시 동생에게 나누어주었다.
+                  <div className="pp-compare-title">
+                    - 오륜행실도, 복식분축
+                    <img className="joong" src={joong} />
+                  </div>
+                </div>
+                <div className="pp-compare-text">
+                  • 즉시 나누어 가진 문서를 가져와 불태우고, 여러 열쇠를 다
+                  형수에게 맡겼다. 또 저축하였던 돈으로 형의 빚을 다 갚으니 그
+                  형이 부끄러워하다가 마지 못 하여 받았다.
+                  <div className="pp-compare-title">
+                    - 오륜행실도, 언소석적
+                    <img className="joong" src={joong} />
+                  </div>
+                </div>
+                <div className="pp-compare-text">
+                  • “우리 형제 떠나 있은 지 십여 년에 이르니 형제 중에 가산을
+                  잃은 이가 많습니다. 어찌 한 어머니의 자식으로 삶의 고락이
+                  고르지 않게 하겠습니까?” 하고 즉시 재물을 풀어 형제의 빚을
+                  갚고 다시 한집에 모여 살았다.
+                  <div className="pp-compare-title">
+                    - 오륜행실도, 사달의감
+                    <img className="joong" src={joong} />
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -152,9 +207,15 @@ const PastandPresent = () => {
               </div>
             </div>
             <div className="pp-title-right">
-              <div className="pp-book" onClick={() => setBookModal(true)}>
+              <div
+                className="pp-book"
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+                onClick={() => setBookModal(true)}
+              >
                 참고 서적 보기
               </div>
+              {hover && <img className="underline" src={underline} />}
             </div>
           </div>
           <div className="pp-content">
@@ -187,8 +248,8 @@ const PastandPresent = () => {
                             textAlign: "center",
                             verticalAlign: "middle",
                             boxSizing: "border-box", // 패딩과 테두리를 포함한 크기를 설정
-                            fontFamily: "Chosun",
-                            fonSize: "28px",
+                            fontFamily: isHovered ? "SUIT" : "Chosun",
+                            fontSize: "28px",
                             fontWeight: "400",
                             lineHeight: "44px",
                             textAlign: "center",
@@ -196,6 +257,7 @@ const PastandPresent = () => {
                               ? "rgba(0, 205, 218, 1)"
                               : "", // 호버된 셀의 배경색 설정
                             transition: "background-color 0.3s", // 배경색 전환 효과
+                            border: "2px solid black",
                           }}
                           onMouseEnter={() =>
                             setHoveredCell({ row: rowIndex, col: cellIndex })
