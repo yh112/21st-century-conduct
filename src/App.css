@@ -665,6 +665,10 @@
   justify-content: center;
   align-items: center;
   border-bottom: 2px solid black;
+  
+  &:hover {
+    text-shadow: 0 0 5px rgb(255 255 255 / 100%), 0 0 10px rgb(255 255 255 / 100%), 0 0 15px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1);
+  }
 }
 
 .overview-class {
