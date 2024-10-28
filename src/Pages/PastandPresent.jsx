@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import bgImg from "../assets/bg1.png";
+import bgImg from "../assets/overview_pastandpresent_background.png";
 import Navigation from "../components/Navigation";
-import empty_circle from "../assets/empty_circle.png";
-import circle from "../assets/circle.png";
-import x_button from "../assets/btn_x.png";
-import pastandpresentcompare1 from "../assets/pastandpresentcompare1.png";
-import pastandpresentcompare2 from "../assets/pastandpresentcompare2.png";
-import bg_book from "../assets/bg_book.png";
-import text from "../assets/text.png";
-import image from "../assets/image.png";
-import joong from "../assets/joong.png";
-import underline from "../assets/underline.png";
+// import empty_circle from "../assets/button/empty_circle.png";
+// import circle from "../assets/button/circle.png";
+import x_button from "../assets/button/btn_x.png";
+import pastandpresentcompare1 from "../assets/pastandpresent/pastandpresentcompare1.png";
+import pastandpresentcompare2 from "../assets/pastandpresent/pastandpresentcompare2.png";
+import bg_book from "../assets/referbook_past_background.png";
+// import text from "../assets/text.png";
+// import image from "../assets/image.png";
+// import joong from "../assets/joong.png";
+import underline from "../assets/button/underline.png";
 
 const PastandPresent = () => {
   const [selectedKey, setSelectedKey] = useState(5);
@@ -131,8 +131,8 @@ const PastandPresent = () => {
             className="pp-modal-content"
             style={isClosing ? { animation: "fadeOutUp 0.2s" } : {}}
           >
-            <img className="pp-modal-text" src={text} />
-            <img className="pp-modal-image" src={image} />
+            {/* <img className="pp-modal-text" src={text} />
+            <img className="pp-modal-image" src={image} /> */}
           </div>
           {!isClosing && (
             <img className="x-btn" src={x_button} onClick={handleClose} />
@@ -151,7 +151,7 @@ const PastandPresent = () => {
             <img src={compareImg} />
             {compareIndex === 1 && (
               <div className="pp-compare">
-                <div className="pp-compare-text">
+                {/* <div className="pp-compare-text">
                   • 식에게는 어린 아우가 있는데 이미 자라서 어른이 되니 식이
                   전택과 재물을 모두 아우에게 주고 다만 기르던 양 백 여 마리를
                   가지고 홀로 산중에 들어가 십 여 년을 양을 쳐 양이 천여 마리에
@@ -179,8 +179,8 @@ const PastandPresent = () => {
                   <div className="pp-compare-title">
                     - 오륜행실도, 사달의감
                     <img className="joong" src={joong} />
-                  </div>
-                </div>
+                  </div> */}
+                {/* </div> */}
               </div>
             )}
           </div>
@@ -194,11 +194,11 @@ const PastandPresent = () => {
             <div className="pp-title-left">
               <div className="pp-title-pp">
                 <div className="pp-title-set">
-                  <img src={empty_circle} />
+                  {/* <img src={empty_circle} /> */}
                   <div className="pp-text">과거</div>
                 </div>
                 <div className="pp-title-set">
-                  <img src={circle} />
+                  {/* <img src={circle} /> */}
                   <div className="pp-text">현재</div>
                 </div>
               </div>

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import bgImg from "../assets/bg1.png";
+import bgImg from "../assets/overview_pastandpresent_background.png";
 import Navigation from "../components/Navigation";
 import OverviewContent from "../components/OverviewContent";
-import Confucius from "../assets/confucius.png";
-import Mencius from "../assets/mencius.png";
-import Xunzi from "../assets/xunzi.png";
-import Zhuzi from "../assets/zhuzi.png";
-import FiveRV from "../assets/rive_rites.png";
-import RiteofPassage from "../assets/marriage_rites.png";
-import HumanNatureView from "../assets/human_relationship.png";
+import Confucius from "../assets/overview/confucius.png";
+import Mencius from "../assets/overview/mencius.png";
+import Xunzi from "../assets/overview/xunzi.png";
+import Zhuzi from "../assets/overview/zhuzi.png";
+import FiveRV from "../assets/overview/rive_rites.png";
+import RiteofPassage from "../assets/overview/marriage_rites.png";
+import HumanNatureView from "../assets/overview/human_relationship.png";
 const Overview = () => {
   const [selectedKey, setSelectedKey] = useState(3);
   const [selectedClass, setSelectedClass] = useState([]);

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import landingImage from "../assets/bg_home.png";
-import btn1 from "../assets/btn_bg.png";
-import btn2 from "../assets/btn_overview.png";
-import btn3 from "../assets/btn_haengsildo.png";
-import btn4 from "../assets/btn_past_present.png";
 import Door from "../components/Door";
+import landingImage from "../assets/home/bg_home.png";
+import btn1 from "../assets/home/btn_bg.png";
+import btn2 from "../assets/home/btn_overview.png";
+import btn3 from "../assets/home/btn_haengsildo.png";
+import btn4 from "../assets/home/btn_past_present.png";
 
 const Home = () => {
   return (

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import closeDoorImg from "../assets/door2_closed.png";
+import closeDoorImg from "../assets/home/landing_02_close.png";
 // import openDoorImg from "../assets/door2_open.png";
-import openDoorImg from "../assets/door2_set.png";
-import door_shadow from "../assets/door2_shadow.png";
+import openDoorImg from "../assets/home/landing_02_open.png";
+import door_shadow from "../assets/home/landing_02_open_gradation.png";
 
 const Door = ({ buttonImg, link, index }) => {
   const [doorSrc, setDoorSrc] = useState(closeDoorImg);

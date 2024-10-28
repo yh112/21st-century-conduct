@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import backgroundImg from "../assets/landing/landing-01.png";
-import doorImg from "../assets/landing/landing-01-close.png";
-import openDoorImg from "../assets/landing/landing-01-open.png";
-import btn from "../assets/btn_visit.png";
-import hoverBtn from "../assets/btn_visit_hover.png";
+import backgroundImg from "../assets/landing/landing_01.png";
+import doorImg from "../assets/landing/landing_01_close.png";
+import openDoorImg from "../assets/landing/landing_01_open.png";
+import btn from "../assets/landing/btn_visit.png";
+import hoverBtn from "../assets/landing/btn_visit_hover.png";
 
 const Landing = () => {
   const [doorSrc, setDoorSrc] = useState(doorImg);

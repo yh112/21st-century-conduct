@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
-import bgImg from "../assets/bg_haengsildo.png";
 import Navigation from "../components/Navigation";
 import House from "../components/House";
-import images from "../assets/home";
-import modalImages from "../assets/modal_images";
-import x_button from "../assets/btn_x.png";
-import cloud1 from "../assets/cloud1.png";
-import cloud2 from "../assets/cloud2.png";
-import cloud3 from "../assets/cloud3.png";
-import cloud4 from "../assets/cloud4.png";
-import geum from "../assets/geum.gif";
+import images from "../assets/conduct/house";
+import modalImages from "../assets/conduct/modal_images";
+import bgImg from "../assets/conduct/hangsildo-background.png";
+import x_button from "../assets/button/btn_x.png";
+import cloud1 from "../assets/conduct/cloud1.png";
+import cloud1_hover from "../assets/conduct/cloud1_hover.png";
+import cloud2 from "../assets/conduct/cloud2.png";
+import cloud2_hover from "../assets/conduct/cloud2_hover.png";
+import cloud3 from "../assets/conduct/cloud3.png";
+import cloud3_hover from "../assets/conduct/cloud3_hover.png";
+import cloud4 from "../assets/conduct/cloud4.png";
+import cloud4_hover from "../assets/conduct/cloud4_hover.png";
+import geum from "../assets/conduct/geum.gif";
 
 const Conduct = () => {
   const [selectedKey, setSelectedKey] = useState(4);
