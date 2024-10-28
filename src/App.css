@@ -128,8 +128,8 @@
 
 /* 아이맥 27인치 2560X1440 */
 .door2-container {
-  width: 752px;
-  height: 685px;
+  width: 1165px;
+  height: 1060px;
   /* top: 250px;
   left: 30%; */
   top: 316px;
@@ -140,8 +140,8 @@
 }
 
 .door2-image {
-  width: 1002px;
-  height: 913px;
+  width: 1165px;
+  height: 1060px;
   /* top: 210px;
   left: -40px; */
   /* top: calc(218px * var(--scale-y)); */
