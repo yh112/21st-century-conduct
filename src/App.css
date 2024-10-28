@@ -153,20 +153,20 @@
   animation: fadein 1s;
 }
 
+/* 
 .door2-image-shadow {
   width: 1920px;
-  height: 1080px;
+  height: 1080px; */
   /* top: -320px;
   left: -580px; */
   /* top: calc(218px * var(--scale-y)); */
   /* left: calc(605px * var(--scale-x)); */
   /* left: 605px; */
   /* position: relative; */
-  position: absolute;
+  /* position: absolute;
   z-index: 99;
-
   animation: fadein 1s;
-}
+} */
 
 
 .btn {

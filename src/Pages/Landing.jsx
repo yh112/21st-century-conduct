@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import backgroundImg from "../assets/bg_landing.png";
-import doorImg from "../assets/door1_closed.png";
-import openDoorImg from "../assets/door1_open.png";
-import door_shadow from "../assets/door1_shadow.png";
+import backgroundImg from "../assets/landing/landing-01.png";
+import doorImg from "../assets/landing/landing-01-close.png";
+import openDoorImg from "../assets/landing/landing-01-open.png";
 import btn from "../assets/btn_visit.png";
 import hoverBtn from "../assets/btn_visit_hover.png";
 
@@ -34,7 +33,6 @@ const Landing = () => {
         onMouseOut={onDoorContainerMouseOut}
       >
         <img className="door2-image" src={doorSrc} />
-        {!doorState && <img className="door2-image-shadow" src={door_shadow} />}
         {!doorState && (
           <NavLink to="/home">
             <img
