@@ -27,9 +27,15 @@ const Door = ({ buttonImg, link, index }) => {
       className="door-btn-container"
       onMouseOver={onDoorMouseOver}
       onMouseOut={onDoorMouseOut}
+      style={{left: index*577}}
     >
-      {doorState && <img className="door-image" style={{left: index*366}} src={closeDoorImg} />}
-      {!doorState && <img className={'door-image-open-'+index}  src={openDoorImg}/>}
+      {doorState && <img className="door-image" src={closeDoorImg} />}
+      {!doorState && 
+      <>
+      <img className={'door-image-open-'+index}  src={openDoorImg}/>
+      <img className={'door-shadow-'+index} src={door_shadow}/>
+      </>
+      }
       {!doorState && (
         <NavLink to={link}>
           <img className={"homeBtn-"+index} src={buttonImg} />

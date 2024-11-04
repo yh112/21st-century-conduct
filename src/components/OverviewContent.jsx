@@ -34,7 +34,7 @@ const OverviewContent = ({ title, type, contents }) => {
       <div className="overview-text-container">
         <div className="overview-text">
           {contents.map((content, index) => (
-            <div key={index} ref={contentRefs.current[index]}>
+            <div className="class-container" key={index} ref={contentRefs.current[index]}>
               <div className="class-title">{content.title}</div>
               {type === "top" ? (
                 <>
