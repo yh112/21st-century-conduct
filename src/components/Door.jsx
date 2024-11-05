@@ -6,11 +6,9 @@ import openDoorImg from "../assets/home/landing_02_open.png";
 import door_shadow from "../assets/home/landing_02_open_gradation.png";
 
 const Door = ({ buttonImg, link, index }) => {
-  const [doorSrc, setDoorSrc] = useState(closeDoorImg);
   const [doorState, setDoorState] = useState(true);
 
   const onDoorMouseOver = () => {
-    setDoorSrc(openDoorImg);
     setDoorState(false);
   };
 
@@ -18,7 +16,6 @@ const Door = ({ buttonImg, link, index }) => {
     if (e.relatedTarget && e.currentTarget.contains(e.relatedTarget)) {
       return;
     }
-    setDoorSrc(closeDoorImg);
     setDoorState(true);
   };
 

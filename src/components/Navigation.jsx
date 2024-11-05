@@ -29,7 +29,7 @@ const Navigation = ({ selectedKey, setSelectedKey }) => {
           }}
         >
           <div
-            className={`navigation-content ${selectedKey === 2 ? "hover" : ""}`}
+            className={`navigation-content${selectedKey === 2 ? "-hover" : ""}`}
             onClick={() => {
               console.log(2);
               setSelectedKey(2);
@@ -46,7 +46,7 @@ const Navigation = ({ selectedKey, setSelectedKey }) => {
           }}
         >
           <div
-            className={`navigation-content ${selectedKey === 3 ? "hover" : ""}`}
+            className={`navigation-content${selectedKey === 3 ? "-hover" : ""}`}
             key={3}
           >
             유교개요
@@ -59,7 +59,7 @@ const Navigation = ({ selectedKey, setSelectedKey }) => {
           }}
         >
           <div
-            className={`navigation-content ${selectedKey === 4 ? "hover" : ""}`}
+            className={`navigation-content${selectedKey === 4 ? "-hover" : ""}`}
             key={4}
           >
             행실도
@@ -72,7 +72,7 @@ const Navigation = ({ selectedKey, setSelectedKey }) => {
           }}
         >
           <div
-            className={`navigation-content ${selectedKey === 5 ? "hover" : ""}`}
+            className={`navigation-content${selectedKey === 5 ? "-hover" : ""}`}
             key={5}
           >
             과거와현재
