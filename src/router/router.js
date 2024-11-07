@@ -1,3 +1,4 @@
+// router.js
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
@@ -6,6 +7,7 @@ import Background from "../pages/Background";
 import Overview from "../pages/Overview";
 import Conduct from "../pages/Conduct";
 import PastandPresent from "../pages/PastandPresent";
+import FadeInWrapper from "./FadeInWrapper";
 
 const router = createBrowserRouter(
   [
@@ -13,34 +15,31 @@ const router = createBrowserRouter(
       children: [
         {
           path: "/",
-          element: <Landing />,
+          element: <FadeInWrapper><Landing /></FadeInWrapper>,
         },
         {
           path: "/home",
-          element: <Home />,
+          element: <FadeInWrapper><Home /></FadeInWrapper>,
         },
         {
           path: "/background",
-          element: <Background />,
+          element: <FadeInWrapper><Background /></FadeInWrapper>,
         },
         {
           path: "/overview",
-          element: <Overview />,
+          element: <FadeInWrapper><Overview /></FadeInWrapper>,
         },
         {
           path: "/conduct",
-          element: <Conduct />,
+          element: <FadeInWrapper><Conduct /></FadeInWrapper>,
         },
         {
           path: "/pastandpresent",
-          element: <PastandPresent />,
+          element: <FadeInWrapper><PastandPresent /></FadeInWrapper>,
         },
       ],
     },
   ],
-  {
-    basename: process.env.PUBLIC_URL,
-  }
 );
 
 export default router;

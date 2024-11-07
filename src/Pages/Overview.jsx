@@ -10,7 +10,7 @@ import FiveRV from "../assets/overview/rive_rites.png";
 import RiteofPassage from "../assets/overview/marriage_rites.png";
 import HumanNatureView from "../assets/overview/human_relationship.png";
 const Overview = () => {
-  const [selectedKey, setSelectedKey] = useState(3);
+  const [selectedKey, setSelectedKey] = useState(2);
   const [selectedClass, setSelectedClass] = useState([]);
 
   const historicalChanges = [

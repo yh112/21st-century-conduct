@@ -59,8 +59,8 @@ import backgroundImg from "../assets/landing/bg_landing.png";
 import backgroundText from "../assets/landing/bg_landing_text.png";
 import doorImg from "../assets/landing/landing_01_close.png";
 import openDoorImg from "../assets/landing/landing_01_open.png";
-import btn from "../assets/landing/btn_visit.png";
-import hoverBtn from "../assets/landing/btn_visit_hover.png";
+import btn from "../assets/landing/btn_landing.png";
+import hoverBtn from "../assets/landing/btn_landing_hover.png";
 
 const Landing = () => {
   const [doorSrc, setDoorSrc] = useState(doorImg);

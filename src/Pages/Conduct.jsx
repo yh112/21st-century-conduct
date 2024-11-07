@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation";
 import House from "../components/House";
 import Modal from "../components/Modal";
-import explanation from "../assets/conduct/hangsildo-explanation.png";
+import explanation from "../assets/conduct/hangsildo_explanation.png";
 import images from "../assets/conduct/house";
 import modalImages from "../assets/conduct/modal_images";
-import bgImg from "../assets/conduct/hangsildo-background.png";
+import bgImg from "../assets/conduct/bg_haengsildo.png";
 import x_button from "../assets/button/btn_x.png";
 import cloud1 from "../assets/conduct/cloud1_hover.png";
 import cloud2 from "../assets/conduct/cloud2_hover.png";
@@ -14,7 +14,7 @@ import cloud4 from "../assets/conduct/cloud4_hover.png";
 import geum from "../assets/conduct/geum.gif";
 
 const Conduct = () => {
-  const [selectedKey, setSelectedKey] = useState(4);
+  const [selectedKey, setSelectedKey] = useState(3);
   const [modal, setModal] = useState(false);
   const [modalImage, setModalImage] = useState("");
   const [isDragging, setIsDragging] = useState(null);
@@ -82,12 +82,12 @@ const Conduct = () => {
       {!xBtn && (
         <Modal
           imgSrc={explanation}
-          width="1300px"
-          height="974px"
-          top={"233px"}
-          left={"630px"}
-          xTop={"233px"}
-          xLeft={"1940px"}
+          width="1108px"
+          height="830px"
+          top={"305px"}
+          left={"726px"}
+          xTop={"305px"}
+          xLeft={"1844px"}
           setXBtn={setXBtn}
         />
       )}
@@ -100,7 +100,7 @@ const Conduct = () => {
             <img className="cd-modal-img" src={modalImage} />
             <img className="cd-modal-gif" src={geum} />
           </div>
-          <img src={x_button} className="x-btn" onClick={handleClose} />
+          <img src={x_button} className="x-btn" style={{left: "282px", top: "1746px"}} onClick={handleClose} />
         </div>
       )}
       <div className="background">
@@ -120,7 +120,6 @@ const Conduct = () => {
               left: `${positions.cloud1.x}px`,
               top: `${positions.cloud1.y}px`,
               cursor: isDragging === "cloud1" ? "grabbing" : "grab",
-              zIndex: 500,
             }}
             onMouseDown={(e) => handleMouseDown(e, "cloud1")}
             src={cloud1}
@@ -132,7 +131,6 @@ const Conduct = () => {
               left: `${positions.cloud2.x}px`,
               top: `${positions.cloud2.y}px`,
               cursor: isDragging === "cloud2" ? "grabbing" : "grab",
-              zIndex: 500,
             }}
             onMouseDown={(e) => handleMouseDown(e, "cloud2")}
             src={cloud2}
@@ -144,7 +142,6 @@ const Conduct = () => {
               left: `${positions.cloud3.x}px`,
               top: `${positions.cloud3.y}px`,
               cursor: isDragging === "cloud3" ? "grabbing" : "grab",
-              zIndex: 500,
             }}
             onMouseDown={(e) => handleMouseDown(e, "cloud3")}
             src={cloud3}
@@ -156,7 +153,6 @@ const Conduct = () => {
               left: `${positions.cloud4.x}px`,
               top: `${positions.cloud4.y}px`,
               cursor: isDragging === "cloud4" ? "grabbing" : "grab",
-              zIndex: 500,
             }}
             onMouseDown={(e) => handleMouseDown(e, "cloud4")}
             src={cloud4}

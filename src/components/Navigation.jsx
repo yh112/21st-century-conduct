@@ -23,7 +23,7 @@ const Navigation = ({ selectedKey, setSelectedKey }) => {
           </div>
         </Link>
         <Link
-          to="/background"
+          to="/overview"
           style={{
             textDecoration: "none",
           }}
@@ -36,19 +36,6 @@ const Navigation = ({ selectedKey, setSelectedKey }) => {
             }}
             key={2}
           >
-            배경
-          </div>
-        </Link>
-        <Link
-          to="/overview"
-          style={{
-            textDecoration: "none",
-          }}
-        >
-          <div
-            className={`navigation-content${selectedKey === 3 ? "-hover" : ""}`}
-            key={3}
-          >
             유교개요
           </div>
         </Link>
@@ -59,8 +46,8 @@ const Navigation = ({ selectedKey, setSelectedKey }) => {
           }}
         >
           <div
-            className={`navigation-content${selectedKey === 4 ? "-hover" : ""}`}
-            key={4}
+            className={`navigation-content${selectedKey === 3 ? "-hover" : ""}`}
+            key={3}
           >
             행실도
           </div>
@@ -72,10 +59,23 @@ const Navigation = ({ selectedKey, setSelectedKey }) => {
           }}
         >
           <div
+            className={`navigation-content${selectedKey === 4 ? "-hover" : ""}`}
+            key={4}
+          >
+            과거와현재
+          </div>
+        </Link>
+        <Link
+          to="/background"
+          style={{
+            textDecoration: "none",
+          }}
+        >
+          <div
             className={`navigation-content${selectedKey === 5 ? "-hover" : ""}`}
             key={5}
           >
-            과거와현재
+            배경
           </div>
         </Link>
       </div>

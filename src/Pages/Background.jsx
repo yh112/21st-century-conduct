@@ -5,7 +5,7 @@ import letter from "../assets/background/background_letter.png";
 import letter_text from "../assets/background/background_letter_text.png";
 
 const Background = () => {
-  const [selectedKey, setSelectedKey] = useState(2);
+  const [selectedKey, setSelectedKey] = useState(5);
   const [open, setOpen] = useState(false);
   const [btnText, setBtnText] = useState("+");
   const sidebarText = [
@@ -17,6 +17,7 @@ const Background = () => {
     "③ 목적 및 가능성",
     "유교의 덕목을 현실에 접목하여 문제를 해결하고자 하는 연구는 한국 사회의 가치관에 대해 깊이 탐구하며 전통 가치와 현대 가치의 연결고리를 찾고 이를 실제 상황에 적용하는 방법을 모색한다는 의의가 있다. 또한 전통적 유교와 현대 사회의 모습을 결합하는 과정에서 새로운 시각을 발견하고 흥미로운 그래픽 요소와 매체를 활용하는 경험을 얻을 수 있다.",
   ];
+  const sidebarBottomText = ["하서은", "hasoeeun17@gmail.com\n@haeo_ng"];
 
   const handleOpen = () => {
     setOpen((prevOpen) => {
@@ -39,7 +40,20 @@ const Background = () => {
         {open && (
           <>
             <div className="sidebar-title">프로젝트 소개</div>
-            <div className="sidebar-content"></div>
+            <div className="sidebar-content">
+              {sidebarText.map((text, index) => (
+                <div key={index} className={`sidebar-text${index === 0 || index % 2 === 1? "" : "-normal"}`}>
+                  {text}
+                </div>
+              ))}
+            </div>
+            <div className="sidebar-bottom">
+              {sidebarBottomText.map((text, index) => (
+                <div key={index} className={`sidebar-bottom-text${index === 0?"-name":""}`}>
+                  {text}
+                </div>
+              ))}
+            </div>
           </>
         )}
       </div>
