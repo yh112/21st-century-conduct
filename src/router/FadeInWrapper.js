@@ -1,4 +1,3 @@
-// FadeInWrapper.js
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import '../App.css'; // fade-in 애니메이션 정의가 있는 CSS 파일

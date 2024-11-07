@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import home from "../assets/conduct/home.png";
 // import home_hover from "../assets/conduct/home_hover.png";
-import home_hover from "../assets/conduct/home_gradation.png";
 
 const House = ({ family, top, left, src, onClick}) => {
   const [homeSrc, setHomeSrc] = useState(home);
