@@ -12,12 +12,11 @@ const OverviewContent = ({ title, type, contents }) => {
       ? elementRef.current.getBoundingClientRect().left
       : 0;
 
-    setLeft(currentLeft + 1); // 현재 위치에서 10px 오른쪽으로 이동
-    console.log(currentLeft);
+    setLeft(currentLeft); // 현재 위치에서 10px 오른쪽으로 이동
   };
 
   useEffect(() => {
-      moveRight();
+    moveRight();
   }, []);
 
   // Ensure the ref array length matches the contents length
@@ -26,8 +25,20 @@ const OverviewContent = ({ title, type, contents }) => {
   );
 
   const handleTitleClick = (index) => {
-    if (contentRefs.current[index] && contentRefs.current[index].current) {
-      contentRefs.current[index].current.scrollIntoView({ behavior: "smooth" });
+    const parentElement = elementRef.current;
+    const childElement = contentRefs.current[index]?.current;
+
+    if (parentElement && childElement) {
+      // 자식 요소의 위치 가져오기
+      const parentRect = parentElement.getBoundingClientRect();
+      const childRect = childElement.getBoundingClientRect();
+
+      // 부모 요소의 스크롤 위치 계산
+      const scrollOffset =
+        childRect.top - parentRect.top + parentElement.scrollTop;
+
+      // 스크롤 이동
+      parentElement.scrollTo({ top: scrollOffset, behavior: "smooth" });
     }
   };
 
@@ -35,17 +46,23 @@ const OverviewContent = ({ title, type, contents }) => {
     e.stopPropagation();
     e.preventDefault();
     setHovered(true);
-  }
+  };
 
   const handleMouseOut = (e) => {
     e.stopPropagation();
     e.preventDefault();
     setHovered(false);
-  }
+  };
 
   return (
-    <div className="overview-content" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-      <div className={`overview-title${hovered?"-hovered":""}`}>{title}</div>
+    <div
+      className="overview-content"
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
+    >
+      <div className={`overview-title${hovered ? "-hovered" : ""}`}>
+        {title}
+      </div>
       <div className="overview-class">
         {contents.map(
           (content, index) =>
@@ -60,25 +77,40 @@ const OverviewContent = ({ title, type, contents }) => {
             )
         )}
       </div>
-      <div className="overview-text-container" ref={elementRef} onMouseOver={()=>setHovered(true)} onMouseOut={()=>setHovered(false)}>
-        {hovered && <div className="shadowbar" style={{left: `${left}px`}}></div>}
+      <div
+        className="overview-text-container"
+        ref={elementRef}
+        onMouseOver={() => setHovered(true)}
+        onMouseOut={() => setHovered(false)}
+      >
+        {hovered && (
+          <div className="shadowbar" style={{ left: `${left}px` }}></div>
+        )}
         <div className="overview-text">
           {contents.map((content, index) => (
-            <div
-              className="class-container"
-              key={index}
-              ref={contentRefs.current[index]}
-            >
-              <div className="class-title">{content.title}</div>
+            <div className="class-container" key={index}>
+              <div className="class-title" ref={contentRefs.current[index]}>
+                {content.title}
+              </div>
               {type === "top" ? (
                 <>
-                  {content.src && <img src={content.src} style={{width: content.width, height: content.height}}/>}
+                  {content.src && (
+                    <img
+                      src={content.src}
+                      style={{ width: content.width, height: content.height }}
+                    />
+                  )}
                   <div className="class-text">{content.text}</div>
                 </>
               ) : (
                 <>
                   <div className="class-text">{content.text}</div>
-                  {content.src && <img src={content.src} style={{width: content.width, height: content.height}}/>}
+                  {content.src && (
+                    <img
+                      src={content.src}
+                      style={{ width: content.width, height: content.height }}
+                    />
+                  )}
                 </>
               )}
             </div>

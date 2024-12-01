@@ -6,6 +6,6 @@ const importAll = (requireContext) => {
     return images;
   };
   
-  const images = importAll(require.context('./', false, /\.(png|jpe?g|svg)$/));
+  const images = importAll(require.context('./', false, /\.(png|jpe?g|svg|gif)$/));
   
   export default images;
