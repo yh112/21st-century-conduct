@@ -40,8 +40,8 @@ const router = createBrowserRouter(
       ],
     },
     {
-      basename: "/",
-    }
+      basename: process.env.PUBLIC_URL,
+    },
   ],
 );
 
