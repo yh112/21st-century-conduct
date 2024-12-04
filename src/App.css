@@ -1205,7 +1205,8 @@ body {
 .present-content {
   position: absolute;
   width: 800px;
-  height: 1335px;
+  /* height: 1335px; */
+  height: 1315px;
   top: 105px;
   border-top: 6px solid black;
   box-sizing: border-box;
