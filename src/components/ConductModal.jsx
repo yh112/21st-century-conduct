@@ -44,6 +44,7 @@ const ConductModal = ({ isClosing, handleClose, modalInfo }) => {
         {clicked && (
           <img
             className="cd-modal-gif"
+            style={modalInfo.family === "김" ? {transform: "rotate(1deg)"} : {}}
             src={gif}
             onClick={() => setClicked(false)}
           />

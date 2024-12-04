@@ -3,7 +3,7 @@ import Navigation from "../components/Navigation";
 import House from "../components/House";
 import Modal from "../components/Modal";
 import ConductModal from "../components/ConductModal";
-import explanation from "../assets/conduct/hangsildo_explanation.png";
+import explanation from "../assets/conduct/hangsildo_explanation.webp";
 import images from "../assets/conduct/house";
 import modalImages from "../assets/conduct/modal_images";
 import bgImg from "../assets/conduct/bg_hangsildo.webp";
