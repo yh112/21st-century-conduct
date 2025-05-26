@@ -2,7 +2,7 @@
 ![Image](https://github.com/user-attachments/assets/f9c6b507-019e-4207-b176-6ae6c0ae9dc5)
 이 프로젝트는 **React.js**로 제작된 전시/소개형 웹 애플리케이션입니다. 애니메이션 효과, 정보성 페이지, 모달 인터페이스, 라우팅 시스템 등으로 구성되어 사용자가 다양한 콘텐츠를 탐색할 수 있도록 설계되었습니다.
 
-👉체험해보기: https://capstonedesign.vercel.app/👈
+👉 체험해보기: https://capstonedesign.vercel.app/ 👈
 
 ---
 
