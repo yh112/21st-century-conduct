@@ -66,7 +66,7 @@ const Landing = () => {
   const [doorSrc, setDoorSrc] = useState(doorImg);
   const [isHovered, setIsHovered] = useState(false);
   const [btnSrc, setBtnSrc] = useState(btn);
-  
+
 
   const onDoorContainerMouseOver = () => {
     setIsHovered(true);
@@ -85,22 +85,23 @@ const Landing = () => {
     <div className="background">
       <img
         className="background-image"
-        // src={backgroundImg}
-        style={{backgroundImage: `url(${backgroundImg})`, backgroundSize: "cover"}}
+        src={backgroundImg}
+        fetchpriority="high"
       />
-      <img className="background-text" src={backgroundText} />
+      <img className="background-text" src={backgroundText} loading="lazy" />
       <div
         className="door2-container"
         onMouseOver={onDoorContainerMouseOver}
         onMouseOut={onDoorContainerMouseOut}
       >
         <img
-          className={`door2-image ${isHovered ? "transition" : ""}`} // 호버 상태에서만 트랜지션 추가
+          className={`door2-image ${isHovered ? "transition" : ""}`}
           src={doorSrc}
+          loading="lazy"
         />
         {isHovered && (
           <NavLink to="/home"
-            // style={{ cursor: "url(`./assets/cursor_click.png`) 64 64, auto" }}
+          // style={{ cursor: "url(`./assets/cursor_click.png`) 64 64, auto" }}
           >
             <img
               className="btn"

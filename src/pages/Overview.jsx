@@ -144,10 +144,10 @@ const Overview = () => {
       }}
     >
       <Navigation selectedKey={selectedKey} setSelectedKey={setSelectedKey} />
-      <img className="background-image" style={{backgroundImage: `url(${bgImg})`, backgroundSize: "cover"}}/>
+      <img className="background-image" src={bgImg} fetchpriority="high" />
       <div
         className="title"
-        // style={{ cursor: "url(`/assets/cursor_default.png`) 64 64, auto !important" }}
+      // style={{ cursor: "url(`/assets/cursor_default.png`) 64 64, auto !important" }}
       >
         <span>***  </span>
         유교의 기원부터 현재에 이르기까지의 역사와 주요 사상가, 기본 이념,

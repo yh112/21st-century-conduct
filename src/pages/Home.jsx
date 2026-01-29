@@ -11,7 +11,8 @@ const Home = () => {
     <div className="background">
       <img
         className="background-image"
-        style={{backgroundImage: `url(${landingImage})`, backgroundSize: "cover"}}
+        src={landingImage}
+        fetchpriority="high"
       />
       <div className="door-container">
         <Door buttonImg={btn1} link="/overview" index="0" />

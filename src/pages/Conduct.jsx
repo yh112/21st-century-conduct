@@ -110,9 +110,10 @@ const Conduct = () => {
       <div className="background">
         <Navigation selectedKey={selectedKey} setSelectedKey={setSelectedKey} />
         <img className="background-image"
-        style={{backgroundImage: `url(${bgImg})`, backgroundSize: "cover"}}
+          src={bgImg}
+          fetchpriority="high"
         />
-        <div className="title" style={{cursor: "url(`/assets/cursor_default.png`) 64 64, auto !important"}}>
+        <div className="title" style={{ cursor: "url(`/assets/cursor_default.png`) 64 64, auto !important" }}>
           <span>***  </span>
           구름을 치우고 집을 눌러보세요. 각 이야기 속에서 오늘날 우리가 실천할
           수 있는 유교의 가치를 만날 수 있습니다.
@@ -129,6 +130,7 @@ const Conduct = () => {
             }}
             onMouseDown={(e) => handleMouseDown(e, "cloud1")}
             src={cloud1}
+            loading="lazy"
           />
           <img
             className="cloud2"
@@ -140,6 +142,7 @@ const Conduct = () => {
             }}
             onMouseDown={(e) => handleMouseDown(e, "cloud2")}
             src={cloud2}
+            loading="lazy"
           />
           <img
             className="cloud3"
@@ -151,6 +154,7 @@ const Conduct = () => {
             }}
             onMouseDown={(e) => handleMouseDown(e, "cloud3")}
             src={cloud3}
+            loading="lazy"
           />
           <img
             className="cloud4"
@@ -162,6 +166,7 @@ const Conduct = () => {
             }}
             onMouseDown={(e) => handleMouseDown(e, "cloud4")}
             src={cloud4}
+            loading="lazy"
           />
           <House
             family="오씨네집"

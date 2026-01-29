@@ -1495,7 +1495,7 @@ const PastandPresent = () => {
               <span>***  </span> 참고 서적에서는 프로젝트 진행에 활용된 유교
               서적들을 확인할 수 있습니다. <span>  ***</span>
             </div>
-            <img src={bg_book} className="book-image" />
+            <img src={bg_book} className="book-image" loading="lazy" />
             <div className="book-content">
               <div className="book-content-border">
                 <div className="book-modal-shadow-left"></div>
@@ -1522,9 +1522,9 @@ const PastandPresent = () => {
                       </div>
                     </div>
                     <div className="book-item-image">
-                      <img src={item.image} />
+                      <img src={item.image} loading="lazy" />
                       {(item.image2 != null) | (item.image2 != 0) && (
-                        <img src={item.image2} />
+                        <img src={item.image2} loading="lazy" />
                       )}
                     </div>
                   </div>
@@ -1558,6 +1558,7 @@ const PastandPresent = () => {
               src={bg_book}
               className="book-image"
               style={{ height: "713px" }}
+              loading="lazy"
             />
             <div className="past-titles">
               {pastTitle.map((title, index) => (
@@ -1615,7 +1616,7 @@ const PastandPresent = () => {
               사람들의 의견을 연구한 설문조사 결과를 제공합니다.
               <span>  ***</span>
             </div>
-            <img src={bg_present} className="present-image" />
+            <img src={bg_present} className="present-image" loading="lazy" />
             <div className="present-content">
               <div className="present-content-border">
                 <div className="present-modal-shadow"></div>
@@ -1627,9 +1628,8 @@ const PastandPresent = () => {
                     onMouseLeave={() => setPresentItem(null)}
                   >
                     <div
-                      className={`present-item-title${
-                        presentItem === index ? "-hover" : ""
-                      }`}
+                      className={`present-item-title${presentItem === index ? "-hover" : ""
+                        }`}
                     >
                       <div className="present-item-num">{index + 1}</div>
                       <div style={{ paddingLeft: "15px" }}>{item.title}</div>
@@ -1639,11 +1639,10 @@ const PastandPresent = () => {
                         <tbody>
                           {item.choices.map((choice, i) => (
                             <tr
-                              className={`present-item-row${
-                                presentItem === index &&
+                              className={`present-item-row${presentItem === index &&
                                 item.answer.includes(i) &&
                                 "-hover"
-                              }`}
+                                }`}
                               key={i}
                             >
                               <td className="present-item-choice">{choice}</td>
@@ -1677,18 +1676,18 @@ const PastandPresent = () => {
       )}
       <div className="background">
         <Navigation selectedKey={selectedKey} setSelectedKey={setSelectedKey} />
-        <img className="background-image" style={{backgroundImage: `url(${bgImg})`, backgroundSize: "cover"}} />
+        <img className="background-image" src={bgImg} fetchpriority="high" />
 
         {hover != null && clickedRow.row === null && (
           <div className="hover-image-container">
-            <img className="hover-image" src={main[hover][5]} />
+            <img className="hover-image" src={main[hover][5]} loading="lazy" />
           </div>
         )}
         <div
           className="title"
-          // style={{
-          //   cursor: "url(`/assets/cursor_default.png`) 64 64, auto !important",
-          // }}
+        // style={{
+        //   cursor: "url(`/assets/cursor_default.png`) 64 64, auto !important",
+        // }}
         >
           <div
             className="pp-btn"
@@ -1753,11 +1752,10 @@ const PastandPresent = () => {
                     {row.slice(0, -1).map((cell, colIndex) => (
                       <div
                         key={colIndex}
-                        className={`pp-cell-${
-                          hover === rowIndex || clickedRow.row == rowIndex
-                            ? "hover-" + colIndex
-                            : colIndex
-                        }`}
+                        className={`pp-cell-${hover === rowIndex || clickedRow.row == rowIndex
+                          ? "hover-" + colIndex
+                          : colIndex
+                          }`}
                       >
                         {(hover === rowIndex || clickedRow.row === rowIndex) &&
                           colIndex === 3 && (
@@ -1776,14 +1774,14 @@ const PastandPresent = () => {
                       className="quiz-container"
                       style={
                         isClosedModal &&
-                        !bookModal &&
-                        !pastModal &&
-                        !presentModal
+                          !bookModal &&
+                          !pastModal &&
+                          !presentModal
                           ? { animation: "quizClose 0.3s forwards" }
                           : {}
                       }
                     >
-                      <img className="quiz-image" src={quiz_image} />
+                      <img className="quiz-image" src={quiz_image} loading="lazy" />
                       {quiz
                         .filter((item) => item.row === clickedRow.row)
                         .map((item, index) => (
@@ -1799,7 +1797,7 @@ const PastandPresent = () => {
                             {wrong === true && (
                               <div className="quiz-title-wrong">아쉬워요!</div>
                             )}
-                            <img src={underline} className="quiz-underline" />
+                            <img src={underline} className="quiz-underline" loading="lazy" />
                             {show === false && (
                               <div className="quiz-title">Q. {item.title}</div>
                             )}
@@ -1808,15 +1806,14 @@ const PastandPresent = () => {
                                 {item.choices.map((choice, choiceIndex) => (
                                   <div
                                     key={choiceIndex}
-                                    className={`quiz-choice${
-                                      clickChoice === null ||
+                                    className={`quiz-choice${clickChoice === null ||
                                       clickChoice != choiceIndex
-                                        ? ""
-                                        : choiceIndex === clickChoice &&
-                                          wrong === true
+                                      ? ""
+                                      : choiceIndex === clickChoice &&
+                                        wrong === true
                                         ? "-wrong"
                                         : "-right"
-                                    }`}
+                                      }`}
                                     style={{
                                       backgroundImage: `url(${quiz_box})`,
                                     }}

@@ -98,6 +98,7 @@ const OverviewContent = ({ title, type, contents }) => {
                     <img
                       src={content.src}
                       style={{ width: content.width, height: content.height }}
+                      loading="lazy"
                     />
                   )}
                   <div className="class-text">{content.text}</div>
@@ -109,6 +110,7 @@ const OverviewContent = ({ title, type, contents }) => {
                     <img
                       src={content.src}
                       style={{ width: content.width, height: content.height }}
+                      loading="lazy"
                     />
                   )}
                 </>
