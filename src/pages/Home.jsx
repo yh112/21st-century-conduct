@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Door from "../components/Door";
 import landingImage from "../assets/home/landing_02.webp";
 import btn1 from "../assets/home/btn_overview.png";
@@ -11,7 +11,9 @@ const Home = () => {
     <div className="background">
       <img
         className="background-image"
-        style={{backgroundImage: `url(${landingImage})`, backgroundSize: "cover"}}
+        src={landingImage}
+        fetchpriority="high"
+        alt="홈 배경"
       />
       <div className="door-container">
         <Door buttonImg={btn1} link="/overview" index="0" />

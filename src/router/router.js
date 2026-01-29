@@ -9,40 +9,62 @@ import Conduct from "../pages/Conduct";
 import PastandPresent from "../pages/PastandPresent";
 import FadeInWrapper from "./FadeInWrapper";
 
-const router = createBrowserRouter(
-  [
-    {
-      children: [
-        {
-          path: "/",
-          element: <FadeInWrapper><Landing /></FadeInWrapper>,
-        },
-        {
-          path: "/home",
-          element: <FadeInWrapper><Home /></FadeInWrapper>,
-        },
-        {
-          path: "/background",
-          element: <FadeInWrapper><Background /></FadeInWrapper>,
-        },
-        {
-          path: "/overview",
-          element: <FadeInWrapper><Overview /></FadeInWrapper>,
-        },
-        {
-          path: "/conduct",
-          element: <FadeInWrapper><Conduct /></FadeInWrapper>,
-        },
-        {
-          path: "/pastandpresent",
-          element: <FadeInWrapper><PastandPresent /></FadeInWrapper>,
-        },
-      ],
-    },
-    // {
-    //   basename: process.env.PUBLIC_URL,
-    // },
-  ],
-);
+const router = createBrowserRouter([
+  {
+    children: [
+      {
+        path: "/",
+        element: (
+          <FadeInWrapper>
+            <Landing />
+          </FadeInWrapper>
+        ),
+      },
+      {
+        path: "/home",
+        element: (
+          <FadeInWrapper>
+            <Home />
+          </FadeInWrapper>
+        ),
+      },
+      {
+        path: "/background",
+        element: (
+          <FadeInWrapper>
+            <Background />
+          </FadeInWrapper>
+        ),
+      },
+      {
+        path: "/overview",
+        element: (
+          <FadeInWrapper>
+            <Overview />
+          </FadeInWrapper>
+        ),
+      },
+      {
+        path: "/conduct",
+        element: (
+          <FadeInWrapper>
+            <Conduct />
+          </FadeInWrapper>
+        ),
+      },
+      {
+        path: "/pastandpresent",
+        element: (
+          <FadeInWrapper>
+            <PastandPresent />
+          </FadeInWrapper>
+        ),
+      },
+    ],
+  },
+  // {
+  //   basename: process.env.PUBLIC_URL,
+  // },
+]);
 
 export default router;

@@ -22,7 +22,7 @@ const PastandPresent = () => {
   const [wrong, setWrong] = useState(null);
   const [show, setShow] = useState(false);
   const [clickChoice, setClickChoice] = useState(null);
-  const [closedRow, setClosedRow] = useState(null);
+  const [, setClosedRow] = useState(null);
   const [presentItem, setPresentItem] = useState(null);
   const [hover, setHover] = useState(null);
   const [bookHover, setBookHover] = useState(null);
@@ -1351,7 +1351,6 @@ const PastandPresent = () => {
   const rows = 31;
   const cols = 5;
   const [clickedRow, setClickedRow] = useState({ row: null });
-  const [isClosing, setIsClosing] = useState(false);
 
   const handleBookModal = () => {
     // setIsClosing(true);
@@ -1406,7 +1405,7 @@ const PastandPresent = () => {
       }
       // 클릭한 행이 다른 행이 클릭된 상태라면 클릭한 행 업데이트
       else {
-        if (clickedRow.row != null) {
+        if (clickedRow.row !== null) {
           setClosedRow(clickedRow.row); // 기존 행 닫기
           setIsClosedModal(true);
           setTimeout(() => {
@@ -1429,7 +1428,7 @@ const PastandPresent = () => {
   };
 
   const mainHover = (rowIndex) => {
-    if (clickedRow.row === null || clickedRow.row != rowIndex) {
+    if (clickedRow.row === null || clickedRow.row !== rowIndex) {
       setHover(rowIndex); // Hover 상태가 변경될 때만 업데이트
     }
   };
@@ -1495,7 +1494,7 @@ const PastandPresent = () => {
               <span>***  </span> 참고 서적에서는 프로젝트 진행에 활용된 유교
               서적들을 확인할 수 있습니다. <span>  ***</span>
             </div>
-            <img src={bg_book} className="book-image" />
+            <img src={bg_book} className="book-image" loading="lazy" alt="참고 서적 배경" />
             <div className="book-content">
               <div className="book-content-border">
                 <div className="book-modal-shadow-left"></div>
@@ -1522,9 +1521,9 @@ const PastandPresent = () => {
                       </div>
                     </div>
                     <div className="book-item-image">
-                      <img src={item.image} />
-                      {(item.image2 != null) | (item.image2 != 0) && (
-                        <img src={item.image2} />
+                      <img src={item.image} loading="lazy" alt={item.name} />
+                      {(item.image2 !== null) && (item.image2 !== 0) && (
+                        <img src={item.image2} loading="lazy" alt={`${item.name} 추가 이미지`} />
                       )}
                     </div>
                   </div>
@@ -1535,6 +1534,7 @@ const PastandPresent = () => {
               src={x_button}
               className="x-button"
               onClick={() => closedModal("book")}
+              alt="닫기"
             />
           </div>
         </div>
@@ -1558,6 +1558,8 @@ const PastandPresent = () => {
               src={bg_book}
               className="book-image"
               style={{ height: "713px" }}
+              loading="lazy"
+              alt="과거 자료 배경"
             />
             <div className="past-titles">
               {pastTitle.map((title, index) => (
@@ -1574,7 +1576,7 @@ const PastandPresent = () => {
                       key={rowIndex}
                       className="past-row"
                       style={{
-                        background: rowIndex % 2 != 0 && "#00CDDA",
+                        background: rowIndex % 2 !== 0 && "#00CDDA",
                         height: row[4],
                       }}
                     >
@@ -1596,6 +1598,7 @@ const PastandPresent = () => {
               src={x_button}
               className="x-button"
               onClick={() => closedModal("past")}
+              alt="닫기"
             />
           </div>
         </div>
@@ -1615,7 +1618,7 @@ const PastandPresent = () => {
               사람들의 의견을 연구한 설문조사 결과를 제공합니다.
               <span>  ***</span>
             </div>
-            <img src={bg_present} className="present-image" />
+            <img src={bg_present} className="present-image" loading="lazy" alt="현재 자료 배경" />
             <div className="present-content">
               <div className="present-content-border">
                 <div className="present-modal-shadow"></div>
@@ -1627,9 +1630,8 @@ const PastandPresent = () => {
                     onMouseLeave={() => setPresentItem(null)}
                   >
                     <div
-                      className={`present-item-title${
-                        presentItem === index ? "-hover" : ""
-                      }`}
+                      className={`present-item-title${presentItem === index ? "-hover" : ""
+                        }`}
                     >
                       <div className="present-item-num">{index + 1}</div>
                       <div style={{ paddingLeft: "15px" }}>{item.title}</div>
@@ -1639,11 +1641,10 @@ const PastandPresent = () => {
                         <tbody>
                           {item.choices.map((choice, i) => (
                             <tr
-                              className={`present-item-row${
-                                presentItem === index &&
+                              className={`present-item-row${presentItem === index &&
                                 item.answer.includes(i) &&
                                 "-hover"
-                              }`}
+                                }`}
                               key={i}
                             >
                               <td className="present-item-choice">{choice}</td>
@@ -1667,28 +1668,27 @@ const PastandPresent = () => {
                 height: "48px",
                 left: "818px",
                 cursor: "pointer",
-                // cursor:
-                //   "url(`/assets/cursor_click.png`) 64 64, auto !important",
               }}
               onClick={() => closedModal("present")}
+              alt="닫기"
             />
           </div>
         </div>
       )}
       <div className="background">
         <Navigation selectedKey={selectedKey} setSelectedKey={setSelectedKey} />
-        <img className="background-image" style={{backgroundImage: `url(${bgImg})`, backgroundSize: "cover"}} />
+        <img className="background-image" src={bgImg} fetchpriority="high" alt="과거와 현재 배경" />
 
-        {hover != null && clickedRow.row === null && (
+        {hover !== null && clickedRow.row === null && (
           <div className="hover-image-container">
-            <img className="hover-image" src={main[hover][5]} />
+            <img className="hover-image" src={main[hover][5]} loading="lazy" alt="미리보기" />
           </div>
         )}
         <div
           className="title"
-          // style={{
-          //   cursor: "url(`/assets/cursor_default.png`) 64 64, auto !important",
-          // }}
+        // style={{
+        //   cursor: "url(`/assets/cursor_default.png`) 64 64, auto !important",
+        // }}
         >
           <div
             className="pp-btn"
@@ -1753,11 +1753,10 @@ const PastandPresent = () => {
                     {row.slice(0, -1).map((cell, colIndex) => (
                       <div
                         key={colIndex}
-                        className={`pp-cell-${
-                          hover === rowIndex || clickedRow.row == rowIndex
-                            ? "hover-" + colIndex
-                            : colIndex
-                        }`}
+                        className={`pp-cell-${hover === rowIndex || clickedRow.row === rowIndex
+                          ? "hover-" + colIndex
+                          : colIndex
+                          }`}
                       >
                         {(hover === rowIndex || clickedRow.row === rowIndex) &&
                           colIndex === 3 && (
@@ -1776,14 +1775,14 @@ const PastandPresent = () => {
                       className="quiz-container"
                       style={
                         isClosedModal &&
-                        !bookModal &&
-                        !pastModal &&
-                        !presentModal
+                          !bookModal &&
+                          !pastModal &&
+                          !presentModal
                           ? { animation: "quizClose 0.3s forwards" }
                           : {}
                       }
                     >
-                      <img className="quiz-image" src={quiz_image} />
+                      <img className="quiz-image" src={quiz_image} loading="lazy" alt="퀴즈 배경" />
                       {quiz
                         .filter((item) => item.row === clickedRow.row)
                         .map((item, index) => (
@@ -1799,7 +1798,7 @@ const PastandPresent = () => {
                             {wrong === true && (
                               <div className="quiz-title-wrong">아쉬워요!</div>
                             )}
-                            <img src={underline} className="quiz-underline" />
+                            <img src={underline} className="quiz-underline" loading="lazy" alt="" />
                             {show === false && (
                               <div className="quiz-title">Q. {item.title}</div>
                             )}
@@ -1808,15 +1807,14 @@ const PastandPresent = () => {
                                 {item.choices.map((choice, choiceIndex) => (
                                   <div
                                     key={choiceIndex}
-                                    className={`quiz-choice${
-                                      clickChoice === null ||
-                                      clickChoice != choiceIndex
-                                        ? ""
-                                        : choiceIndex === clickChoice &&
-                                          wrong === true
+                                    className={`quiz-choice${clickChoice === null ||
+                                      clickChoice !== choiceIndex
+                                      ? ""
+                                      : choiceIndex === clickChoice &&
+                                        wrong === true
                                         ? "-wrong"
                                         : "-right"
-                                    }`}
+                                      }`}
                                     style={{
                                       backgroundImage: `url(${quiz_box})`,
                                     }}

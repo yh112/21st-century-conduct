@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Navigation from "../components/Navigation";
 import House from "../components/House";
 import Modal from "../components/Modal";
@@ -39,11 +39,11 @@ const Conduct = () => {
     });
   };
 
-  const handleMouseUp = () => {
+  const handleMouseUp = useCallback(() => {
     setIsDragging(null);
-  };
+  }, []);
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = useCallback((e) => {
     if (isDragging !== null) {
       setPositions((prevPositions) => ({
         ...prevPositions,
@@ -53,7 +53,7 @@ const Conduct = () => {
         },
       }));
     }
-  };
+  }, [isDragging, offset]);
 
   const handleModal = (key) => {
     setModalInfo({
@@ -72,7 +72,7 @@ const Conduct = () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [isDragging, offset]);
+  }, [handleMouseMove, handleMouseUp]);
 
   const [isClosing, setIsClosing] = useState(false);
 
@@ -110,9 +110,11 @@ const Conduct = () => {
       <div className="background">
         <Navigation selectedKey={selectedKey} setSelectedKey={setSelectedKey} />
         <img className="background-image"
-        style={{backgroundImage: `url(${bgImg})`, backgroundSize: "cover"}}
+          src={bgImg}
+          fetchpriority="high"
+          alt="행실도 배경"
         />
-        <div className="title" style={{cursor: "url(`/assets/cursor_default.png`) 64 64, auto !important"}}>
+        <div className="title" style={{ cursor: "url(`/assets/cursor_default.png`) 64 64, auto !important" }}>
           <span>***  </span>
           구름을 치우고 집을 눌러보세요. 각 이야기 속에서 오늘날 우리가 실천할
           수 있는 유교의 가치를 만날 수 있습니다.
@@ -129,6 +131,8 @@ const Conduct = () => {
             }}
             onMouseDown={(e) => handleMouseDown(e, "cloud1")}
             src={cloud1}
+            loading="lazy"
+            alt="구름"
           />
           <img
             className="cloud2"
@@ -140,6 +144,8 @@ const Conduct = () => {
             }}
             onMouseDown={(e) => handleMouseDown(e, "cloud2")}
             src={cloud2}
+            loading="lazy"
+            alt="구름"
           />
           <img
             className="cloud3"
@@ -151,6 +157,8 @@ const Conduct = () => {
             }}
             onMouseDown={(e) => handleMouseDown(e, "cloud3")}
             src={cloud3}
+            loading="lazy"
+            alt="구름"
           />
           <img
             className="cloud4"
@@ -162,6 +170,8 @@ const Conduct = () => {
             }}
             onMouseDown={(e) => handleMouseDown(e, "cloud4")}
             src={cloud4}
+            loading="lazy"
+            alt="구름"
           />
           <House
             family="오씨네집"

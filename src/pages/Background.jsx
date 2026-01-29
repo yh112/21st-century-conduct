@@ -21,15 +21,15 @@ const Background = () => {
   const sidebarBottomText = ["하서은", "hasoeeun17@gmail.com\n@haeo_ng"];
 
   const handleOpen = () => {
-    if(open) {
+    if (open) {
       setIsClosing(true);
       setTimeout(() => {
         setIsClosing(false);
         setOpen(false);
         setBtnText("+");
       }, 200);
-    } 
-    if(!open && !isClosing) {
+    }
+    if (!open && !isClosing) {
       setOpen(true);
       setBtnText("-");
     }
@@ -40,7 +40,9 @@ const Background = () => {
       <Navigation selectedKey={selectedKey} setSelectedKey={setSelectedKey} />
       <img
         className="background-image"
-        style={{backgroundImage: `url(${bgImg})`, backgroundSize: "cover"}}
+        src={bgImg}
+        fetchpriority="high"
+        alt="배경"
       />
       <div className={`sidebar${open && !isClosing ? "-open" : open && isClosing ? "-close" : ""}`}>
         <div className="open-btn" onClick={handleOpen}>
@@ -53,9 +55,8 @@ const Background = () => {
               {sidebarText.map((text, index) => (
                 <div
                   key={index}
-                  className={`sidebar-text${
-                    index === 0 || index % 2 === 1 ? "" : "-normal"
-                  }${isClosing ? "-close" : ""}`}
+                  className={`sidebar-text${index === 0 || index % 2 === 1 ? "" : "-normal"
+                    }${isClosing ? "-close" : ""}`}
                 >
                   {text}
                 </div>
@@ -74,15 +75,15 @@ const Background = () => {
           </>
         )}
       </div>
-      <div className="title" style={{cursor: "url(`/assets/cursor_default.png`) 64 64, auto !important"}}>
+      <div className="title" style={{ cursor: "url(`/assets/cursor_default.png`) 64 64, auto !important" }}>
         <span>***  </span>
         2024년에 새롭게 펼쳐질 유교의 부활에 많은 관심과 성원을 부탁드립니다.
         <span>  ***</span>
       </div>
       <div className="bg-container">
-        <img className="letter" src={letter} />
+        <img className="letter" src={letter} loading="lazy" alt="편지" />
         <div className="letter-box">
-          <img className="letter-text" src={letter_text} />
+          <img className="letter-text" src={letter_text} loading="lazy" alt="편지 내용" />
         </div>
       </div>
     </div>
