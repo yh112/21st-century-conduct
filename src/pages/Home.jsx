@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Door from "../components/Door";
 import landingImage from "../assets/home/landing_02.webp";
 import btn1 from "../assets/home/btn_overview.png";
 import btn2 from "../assets/home/btn_conduct.png";
 import btn3 from "../assets/home/btn_pp.png";
 import btn4 from "../assets/home/btn_bg.png";
+import { preloadNextPages } from "../utils/preloadImages";
 
 const Home = () => {
+  // 모든 하위 페이지 배경 프리로드
+  useEffect(() => {
+    preloadNextPages(["overview", "conduct", "pastandpresent", "background"]);
+  }, []);
+
   return (
     <div className="background">
       <img
