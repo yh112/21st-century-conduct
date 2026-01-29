@@ -84,10 +84,10 @@ const Background = () => {
       <img className="letter" src={letter} loading="lazy" alt="편지" />
       <div className="letter-box">
         <img className="letter-text" src={letter_text} loading="lazy" alt="편지 내용" />
-        div>
-      div>
-    div>
-  ); 
+      </div>
+    </div>
+    </div >
+  );
 };
 
 export default Background;

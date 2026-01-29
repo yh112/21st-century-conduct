@@ -76,9 +76,7 @@ export const preloadImages = (sources) => {
 
 // 다음 페이지들의 배경 이미지 프리로드
 export const preloadNextPages = (pageKeys) => {
-  const sources = pageKeys
-    .map((key) => PAGE_BACKGROUNDS[key])
-    .filter(Boolean);
+  const sources = pageKeys.map((key) => PAGE_BACKGROUNDS[key]).filter(Boolean);
   return preloadImages(sources);
 };
 
@@ -87,10 +85,9 @@ export const preloadNextPagesAll = (pageKeys) => {
   const backgrounds = pageKeys
     .map((key) => PAGE_BACKGROUNDS[key])
     .filter(Boolean);
-  
-  const largeImages = pageKeys
-    .flatMap((key) => PAGE_LARGE_IMAGES[key] || []);
-  
+
+  const largeImages = pageKeys.flatMap((key) => PAGE_LARGE_IMAGES[key] || []);
+
   return preloadImages([...backgrounds, ...largeImages]);
 };
 
