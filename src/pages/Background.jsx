@@ -81,12 +81,12 @@ const Background = () => {
         <span>  ***</span>
       </div>
       <div className="bg-container">
-        <img className="letter" src={letter} loading="lazy" alt="편지" />
-        <div className="letter-box">
-          <img className="letter-text" src={letter_text} loading="lazy" alt="편지 내용" />
-        </div>
+      <img className="letter" src={letter} loading="lazy" alt="편지" />
+      <div className="letter-box">
+        <img className="letter-text" src={letter_text} loading="lazy" alt="편지 내용" />
       </div>
     </div>
+    </div >
   );
 };
 
