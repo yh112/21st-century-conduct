@@ -5,12 +5,12 @@ import btn1 from "../assets/home/btn_overview.png";
 import btn2 from "../assets/home/btn_conduct.png";
 import btn3 from "../assets/home/btn_pp.png";
 import btn4 from "../assets/home/btn_bg.png";
-import { preloadNextPages } from "../utils/preloadImages";
+import { preloadNextPagesAll } from "../utils/preloadImages";
 
 const Home = () => {
-  // 모든 하위 페이지 배경 프리로드
+  // 모든 하위 페이지 배경 + 큰 이미지 프리로드
   useEffect(() => {
-    preloadNextPages(["overview", "conduct", "pastandpresent", "background"]);
+    preloadNextPagesAll(["overview", "conduct", "pastandpresent", "background"]);
   }, []);
 
   return (
