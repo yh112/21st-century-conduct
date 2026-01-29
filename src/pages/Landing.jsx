@@ -87,8 +87,9 @@ const Landing = () => {
         className="background-image"
         src={backgroundImg}
         fetchpriority="high"
+        alt="랜딩 배경"
       />
-      <img className="background-text" src={backgroundText} loading="lazy" />
+      <img className="background-text" src={backgroundText} loading="lazy" alt="배경 텍스트" />
       <div
         className="door2-container"
         onMouseOver={onDoorContainerMouseOver}
@@ -98,17 +99,16 @@ const Landing = () => {
           className={`door2-image ${isHovered ? "transition" : ""}`}
           src={doorSrc}
           loading="lazy"
+          alt="문"
         />
         {isHovered && (
-          <NavLink to="/home"
-          // style={{ cursor: "url(`./assets/cursor_click.png`) 64 64, auto" }}
-          >
+          <NavLink to="/home">
             <img
               className="btn"
-              // style={{backgroundImage: `url(${btnSrc})`}}
               onMouseOver={() => setBtnSrc(hoverBtn)}
               onMouseOut={() => setBtnSrc(btn)}
               src={btnSrc}
+              alt="입장 버튼"
             />
           </NavLink>
         )}

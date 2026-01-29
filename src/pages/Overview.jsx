@@ -11,7 +11,6 @@ import RiteofPassage from "../assets/overview/marriage_rites.png";
 import HumanNatureView from "../assets/overview/human_relationship.png";
 const Overview = () => {
   const [selectedKey, setSelectedKey] = useState(2);
-  const [selectedClass, setSelectedClass] = useState([]);
 
   const historicalChanges = [
     {
@@ -144,7 +143,7 @@ const Overview = () => {
       }}
     >
       <Navigation selectedKey={selectedKey} setSelectedKey={setSelectedKey} />
-      <img className="background-image" src={bgImg} fetchpriority="high" />
+      <img className="background-image" src={bgImg} fetchpriority="high" alt="유교 개요 배경" />
       <div
         className="title"
       // style={{ cursor: "url(`/assets/cursor_default.png`) 64 64, auto !important" }}

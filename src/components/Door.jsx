@@ -26,16 +26,16 @@ const Door = ({ buttonImg, link, index }) => {
       onMouseOut={onDoorMouseOut}
       style={{ left: index * 577 }}
     >
-      {doorState && <img className="door-image" src={closeDoorImg} loading="lazy" />}
+      {doorState && <img className="door-image" src={closeDoorImg} loading="lazy" alt="닫힌 문" />}
       {!doorState &&
         <>
-          <img className={'door-image-open-' + index} src={openDoorImg} loading="lazy" />
-          <img className={'door-shadow-' + index} src={door_shadow} loading="lazy" />
+          <img className={'door-image-open-' + index} src={openDoorImg} loading="lazy" alt="열린 문" />
+          <img className={'door-shadow-' + index} src={door_shadow} loading="lazy" alt="" />
         </>
       }
       {!doorState && (
         <NavLink to={link}>
-          <img className={"homeBtn-" + index} src={buttonImg} loading="lazy" />
+          <img className={"homeBtn-" + index} src={buttonImg} loading="lazy" alt="메뉴 버튼" />
         </NavLink>
       )}
     </div>

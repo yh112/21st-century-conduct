@@ -99,6 +99,7 @@ const OverviewContent = ({ title, type, contents }) => {
                       src={content.src}
                       style={{ width: content.width, height: content.height }}
                       loading="lazy"
+                      alt={content.title || "콘텐츠 이미지"}
                     />
                   )}
                   <div className="class-text">{content.text}</div>
@@ -111,6 +112,7 @@ const OverviewContent = ({ title, type, contents }) => {
                       src={content.src}
                       style={{ width: content.width, height: content.height }}
                       loading="lazy"
+                      alt={content.title || "콘텐츠 이미지"}
                     />
                   )}
                 </>

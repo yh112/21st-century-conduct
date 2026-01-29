@@ -17,13 +17,14 @@ const Modal = ({ imgSrc, width, height, top, left, xTop, xLeft, setXBtn }) => {
         className={`modal-content${isClosing ? "-close" : ""}`}
         style={{ top: top, left: left }}
       >
-        <img src={imgSrc} style={{ width: width, height: height }} />
+        <img src={imgSrc} style={{ width: width, height: height }} alt="모달 콘텐츠" />
       </div>
       <img
         src={x_btn}
         style={{ top: xTop, left: xLeft }}
         onClick={handleClose}
         className={`x-btn${isClosing ? "-close" : "-modal"}`}
+        alt="닫기"
       />
     </div>
   );

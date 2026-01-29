@@ -42,6 +42,7 @@ const Background = () => {
         className="background-image"
         src={bgImg}
         fetchpriority="high"
+        alt="배경"
       />
       <div className={`sidebar${open && !isClosing ? "-open" : open && isClosing ? "-close" : ""}`}>
         <div className="open-btn" onClick={handleOpen}>
@@ -80,9 +81,9 @@ const Background = () => {
         <span>  ***</span>
       </div>
       <div className="bg-container">
-        <img className="letter" src={letter} loading="lazy" />
+        <img className="letter" src={letter} loading="lazy" alt="편지" />
         <div className="letter-box">
-          <img className="letter-text" src={letter_text} loading="lazy" />
+          <img className="letter-text" src={letter_text} loading="lazy" alt="편지 내용" />
         </div>
       </div>
     </div>

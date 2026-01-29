@@ -13,7 +13,7 @@ const ConductModal = ({ isClosing, handleClose, modalInfo }) => {
       setModalImage(card);
       setGif(modalInfo.gif || defaultGif);
     }
-  }, [clicked]);
+  }, [clicked, modalInfo.gif]);
 
   return (
     <div
@@ -32,6 +32,7 @@ const ConductModal = ({ isClosing, handleClose, modalInfo }) => {
               setModalImage(modalInfo.card_selected);
             }}
             src={modalImage}
+            alt="행실도 카드"
           />
         )}
         {clicked && (
@@ -39,6 +40,7 @@ const ConductModal = ({ isClosing, handleClose, modalInfo }) => {
             className="cd-modal-img-clicked"
             src={modalImage}
             onClick={() => setClicked(false)}
+            alt="선택된 행실도 카드"
           />
         )}
         {clicked && (
@@ -47,6 +49,7 @@ const ConductModal = ({ isClosing, handleClose, modalInfo }) => {
             style={modalInfo.family === "김" ? {transform: "rotate(1deg)"} : {}}
             src={gif}
             onClick={() => setClicked(false)}
+            alt="행실도 애니메이션"
           />
         )}
       </div>
@@ -55,6 +58,7 @@ const ConductModal = ({ isClosing, handleClose, modalInfo }) => {
         className="x-btn"
         style={{ left: "1746px", top: "282px" }}
         onClick={handleClose}
+        alt="닫기"
       />
     </div>
   );
